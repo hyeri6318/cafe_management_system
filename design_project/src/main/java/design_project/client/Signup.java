@@ -22,10 +22,17 @@ import java.util.Scanner;
  * @author 이혜리
  */
 public class Signup {
-        String URL = "C:\\DProject\\src\\main\\java\\info\\client.txt";
-    String id, ps, name;
+    String URL = null;
 
-    public boolean CompareID() {
+    private String id = null;
+    private String ps = null;
+    private String name = null;
+
+    public Signup(String URL) {
+        this.URL = URL + "\\client.txt";
+    }
+
+    public boolean CompareID(String url) {
         try {
             String str;
             String[] array = null;
@@ -33,7 +40,9 @@ public class Signup {
             BufferedReader is = new BufferedReader(new FileReader(URL));
 
             Path path = Paths.get(URL);
+
             Charset cs = StandardCharsets.UTF_8;
+
             ArrayList<String> list = new ArrayList<String>();
             list = (ArrayList<String>) Files.readAllLines(path, cs);
 
@@ -63,7 +72,6 @@ public class Signup {
     }
 
     public void register() {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.println("이름 : ");
@@ -74,12 +82,19 @@ public class Signup {
 
         System.out.println("비밀번호 : ");
         ps = sc.nextLine();
+        
+        store();
+    }
 
-        String s = "/";
-        String n = "\n";
+    public void store() {
 
-        if (CompareID()) {
-            try {
+        try {
+            String s = "/";
+            String n = "\n";
+
+            boolean id_temp = CompareID(URL);
+
+            if (id_temp) {
                 File file = new File(URL);
                 FileWriter writer;
                 writer = new FileWriter(file, true);
@@ -92,12 +107,13 @@ public class Signup {
                 writer.flush();
                 writer.close();
 
-                System.out.print("회원가입 완료");
-            } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("회원가입 완료");
+            } else {
+                System.out.println("같은 아이디가 존재합니다.");
+                register();
             }
-        } else {
-            System.out.print("회원가입 실패");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
