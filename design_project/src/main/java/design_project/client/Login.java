@@ -6,9 +6,7 @@
 package design_project.client;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -21,18 +19,31 @@ import java.util.Scanner;
  *
  * @author 이혜리
  */
-public class Signup {
+public class Login {
+
     String URL = null;
 
-    private String id = null;
-    private String ps = null;
-    private String name = null;
+    String ID = null;
+    String PW = null;
 
-    public Signup(String URL) {
+    public Login(String URL) {
         this.URL = URL + "\\client.txt";
     }
 
-    public boolean CompareID(String url) {
+    public void DoLogin() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("아이디 : ");
+        ID = sc.nextLine();
+
+        System.out.print("비밀번호 : ");
+        PW = sc.nextLine();
+
+        LoginCheck();
+
+    }
+
+    public boolean Compare(String url) {
         try {
             String str;
             String[] array = null;
@@ -48,6 +59,7 @@ public class Signup {
 
             ArrayList<String> list_temp = new ArrayList<String>();
             ArrayList<String> id_list = new ArrayList<String>();
+            ArrayList<String> pw_list = new ArrayList<String>();
 
             for (String i : list) {
                 array = i.split("\n");
@@ -57,63 +69,31 @@ public class Signup {
             for (String i : list_temp) {
                 String[] temp = i.split("/");
                 id_list.add(temp[1]);
+                pw_list.add(temp[2]);
             }
 
-            for (String tmp : id_list) {
-                if (id.equals(tmp)) {
+            for (int i = 0; i < id_list.size(); i++) {
+                if (ID.equals(id_list.get(i)) && PW.equals(pw_list.get(i))) {
                     is.close();
-                    return false;
+                    return true;
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return true;
+        return false;
     }
 
-    public void Register() {
-        Scanner sc = new Scanner(System.in);
+    public void LoginCheck() {
 
-        System.out.println("이름 : ");
-        name = sc.nextLine();
+        boolean id_temp = Compare(URL);
 
-        System.out.println("아이디 : ");
-        id = sc.nextLine();
-
-        System.out.println("비밀번호 : ");
-        ps = sc.nextLine();
-        
-        Store();
-    }
-
-    public void Store() {
-
-        try {
-            String s = "/";
-            String n = "\n";
-
-            boolean id_temp = CompareID(URL);
-
-            if (id_temp) {
-                File file = new File(URL);
-                FileWriter writer;
-                writer = new FileWriter(file, true);
-                writer.write(name);
-                writer.write(s);
-                writer.write(id);
-                writer.write(s);
-                writer.write(ps);
-                writer.write(n);
-                writer.flush();
-                writer.close();
-
-                System.out.println("회원가입 완료");
-            } else {
-                System.out.println("같은 아이디가 존재합니다.");
-                Register();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (id_temp) {
+            System.out.print("로그인 성공\n");
+        } else {
+            System.out.print("로그인 실패\n");
+            DoLogin();
         }
+
     }
 }

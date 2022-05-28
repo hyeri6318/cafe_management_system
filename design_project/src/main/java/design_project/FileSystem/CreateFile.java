@@ -5,7 +5,7 @@
  */
 package design_project.FileSystem;
 
-import design_project.client.Signup;
+import design_project.client.Login;
 import java.io.File;
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class CreateFile {
     
-    public void create() {
+    public void Create() {
         String URL = "C:\\design\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
         //Scanner sc = new Scanner(System.in);
 
@@ -41,7 +41,9 @@ public class CreateFile {
             e.printStackTrace();
         }
         //수정 필요 (로그인 페이지로 연결)
-        Signup s = new Signup(URL);
-        s.register();
+        Login login = new Login(URL);
+        login.DoLogin();
+        //Signup s = new Signup(URL);
+        //s.Register();
     }
 }
