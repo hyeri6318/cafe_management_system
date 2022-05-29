@@ -5,7 +5,7 @@
  */
 package design_project.FileSystem;
 
-import design_project.client.Login;
+import design_project.client.First;
 import java.io.File;
 import java.io.IOException;
 
@@ -41,9 +41,7 @@ public class CreateFile {
             e.printStackTrace();
         }
         //수정 필요 (로그인 페이지로 연결)
-        Login login = new Login(URL);
-        login.DoLogin();
-        //Signup s = new Signup(URL);
-        //s.Register();
+        First f = new First(URL);
+        f.Show();
     }
 }

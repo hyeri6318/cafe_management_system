@@ -27,7 +27,7 @@ public class Login {
     String PW = null;
 
     public Login(String URL) {
-        this.URL = URL + "\\client.txt";
+        this.URL = URL;
     }
 
     public void DoLogin() {

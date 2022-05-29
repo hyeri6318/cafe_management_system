@@ -29,7 +29,7 @@ public class Signup {
     private String name = null;
 
     public Signup(String URL) {
-        this.URL = URL + "\\client.txt";
+        this.URL = URL;
     }
 
     public boolean CompareID(String url) {
