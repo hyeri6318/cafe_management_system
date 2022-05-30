@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.beverage_decorator_project_netbeans;
+package design_project.beverage;
 
 import java.util.Scanner;
 
