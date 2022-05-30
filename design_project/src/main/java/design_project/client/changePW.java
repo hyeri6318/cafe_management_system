@@ -35,7 +35,7 @@ public class changePW {
     ArrayList<String> pw_list = new ArrayList<String>();
 
     public changePW(String URL) {
-        this.URL = URL + "client.txt";
+        this.URL = URL;
     }
 
     public void doChangePW() {
@@ -96,8 +96,6 @@ public class changePW {
     }
 
     public void check() {
-        //First f = new First(URL);
-
         try {
             String str;
             String[] array = null;
@@ -142,7 +140,12 @@ public class changePW {
             }
 
             if (ch == -1) {
-                System.out.print("기존 정보와 일치하지 않습니다.\n");
+                System.out.print("기존 정보와 일치하지 않습니다.\n\n");
+
+                name_list.clear();
+                id_list.clear();
+                pw_list.clear();
+                doChangePW();
             } else {
                 rewrite();
             }

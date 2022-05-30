@@ -40,7 +40,7 @@ public class CreateFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //수정 필요 (로그인 페이지로 연결)
+
         First f = new First(URL);
         f.Show();
     }
