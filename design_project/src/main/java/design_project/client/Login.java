@@ -5,6 +5,7 @@
  */
 package design_project.client;
 
+import design_project.nutrition.nutrition_main;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.charset.Charset;
@@ -25,6 +26,8 @@ public class Login {
 
     String ID = null;
     String PW = null;
+    
+    nutrition_main n = new nutrition_main();
 
     public Login(String URL) {
         this.URL = URL;
@@ -90,6 +93,8 @@ public class Login {
 
         if (id_temp) {
             System.out.print("로그인 성공\n");
+            System.out.print("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
+            n.nutrition();
         } else {
             System.out.print("로그인 실패\n");
             DoLogin();

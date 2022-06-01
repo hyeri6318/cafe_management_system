@@ -39,7 +39,7 @@ public class First {
             switch (choice) {
                 case 1:
                     l.DoLogin();
-                    break;
+                    return;
                 case 2:
                     System.out.print("비회원");
                     return;
