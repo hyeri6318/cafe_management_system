@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author 이재혁
+ * @author 이재혁, 이혜리
  */
 public class removeClient {
     String URL = null;

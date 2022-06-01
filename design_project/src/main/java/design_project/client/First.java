@@ -23,6 +23,7 @@ public class First {
         Signup s = new Signup(URL);
         Login l = new Login(URL);
         changePW c = new changePW(URL);
+        removeClient r = new removeClient(URL);
 
         while (true) {
             System.out.println("------- 환엽합니다 -----------");
@@ -38,19 +39,22 @@ public class First {
             switch (choice) {
                 case 1:
                     l.DoLogin();
-                    return;
+                    break;
                 case 2:
                     System.out.print("비회원");
                     return;
 
                 case 3:
                     s.Register();
-                    return;
+                    break;
                     
                 case 4:
                     c.doChangePW();
+                    break;
                     
                 case 5:
+                    r.doRemove();
+                    break;
 
             }
         }
