@@ -36,10 +36,10 @@ public class Login {
     public void DoLogin() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("아이디 : ");
+        System.out.println("아이디 : ");
         ID = sc.nextLine();
 
-        System.out.print("비밀번호 : ");
+        System.out.println("비밀번호 : ");
         PW = sc.nextLine();
 
         LoginCheck();
@@ -92,11 +92,11 @@ public class Login {
         boolean id_temp = Compare(URL);
 
         if (id_temp) {
-            System.out.print("로그인 성공\n");
-            System.out.print("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
+            System.out.println("로그인 성공\n");
+            System.out.println("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
             n.nutrition();
         } else {
-            System.out.print("로그인 실패\n");
+            System.out.println("로그인 실패\n");
             DoLogin();
         }
 

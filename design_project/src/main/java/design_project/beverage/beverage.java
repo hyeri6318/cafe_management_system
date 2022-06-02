@@ -169,7 +169,7 @@ public abstract class beverage {
             writer.flush();
             writer.close();
 
-            System.out.print("음료 주문 완료");
+            System.out.println("음료 주문 완료");
         } catch (Exception e) {
             e.printStackTrace();
         }

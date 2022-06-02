@@ -140,7 +140,7 @@ public class changePW {
             }
 
             if (ch == -1) {
-                System.out.print("기존 정보와 일치하지 않습니다.\n\n");
+                System.out.println("기존 정보와 일치하지 않습니다.\n\n");
 
                 name_list.clear();
                 id_list.clear();
