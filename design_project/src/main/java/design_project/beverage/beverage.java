@@ -25,146 +25,143 @@ public abstract class beverage {
     int response = 0;
     String coffee, option, drink = null;
 
-    //음료 주문 여부 확인
     public void orderCheck() {
         boolean question1 = true;
-        System.out.println("음료를 주문하시겠습니까?\n1.예 2.아니오");
         while (question1) {
+            System.out.println("음료를 주문하시겠습니까?\n1.예 2.아니오");
             response = sc.nextInt();
             if (response == 1) {
-                orderBeverage();
-                orderOption();
-                check();
+                System.out.println("음료를 주문합니다.");
+                selectbeverage();
+                break; //break랑 boolean false 구분하기
             } else if (response == 2) {
-                System.out.println("케이크 주문으로 넘어갑니다."); //TODO: 케이크 주문 기능으로 넘기기
+                System.out.println("음료를 주문하지 않습니다.");
                 question1 = false;
             } else {
-                System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
+                System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
     }
 
-       //주문 음료 종류 확인
-    public void orderBeverage() {
+    public void selectbeverage() {
         boolean question2 = true;
-        System.out.println("음료를 선택해주세요.\n1.커피 2.라떼 3.프라푸치노 4.스무디 5.티");
         while (question2) {
+            System.out.println("음료를 선택해주세요.\\n1.아메리카노 2.라떼 3.프라푸치노 4.스무디 5.티");
             response = sc.nextInt();
-            switch (response) {
-                case 1:
-                    beverage americano = new americano();
-                    coffee = americano.getDescription() + cost() + "원";
-                    //question2 = false;
-                    return;
-                case 2:
-                    beverage latte = new latte();
-                    coffee = latte.getDescription() + cost() + "원";
-                    //question2 = false;
-                    return;
-                case 3:
-                    boolean question2frappuccino = true;
-                    System.out.println("프라푸치노 종류를 선택해 주세요.\n1.초콜릿 2.바닐라");
-                    while (question2frappuccino) {
-                        response = sc.nextInt();
-                        if (response == 1) {
-                            beverage chocolateFrappuccino = new chocolateFrappuccino();
-                            coffee = chocolateFrappuccino.getDescription() + cost() + "원";
-                            //question2frappuccino = false;
-                            return;
-                        } else if (response == 2) {
-                            beverage vanillaFrappuccino = new vanillaFrappuccino();
-                            coffee = vanillaFrappuccino.getDescription() + cost() + "원";
-                            //question2frappuccino = false;
-                            return;
-                        } else {
-                            System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
-                            continue;
-                        }
-                    }
-                case 4:
-                    boolean question2smoothie = true;
-                    System.out.println("스무디 종류를 선택해 주세요.\n1.딸기 2.키위");
-                    while (question2smoothie) {
-                        response = sc.nextInt();
-                        if (response == 1) {
-                            beverage strawberrySmoothie = new strawberrySmoothie();
-                            coffee = strawberrySmoothie.getDescription() + cost() + "원";
-                            //question2smoothie = false;
-                            return;
-                        } else if (response == 2) {
-                            beverage kiwiSmoothie = new kiwiSmoothie();
-                            coffee = kiwiSmoothie.getDescription() + cost() + "원";
-                            //question2smoothie = false;
-                            return;
-                        } else {
-                            System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
-                            continue;
-                        }
-                        //question2smoothie = false;
-                    }
-                case 5:
-                    boolean question2tea = true;
-                    System.out.println("차 종류를 선택해 주세요.\n1.홍차 2.말차");
-                    while (question2tea) {
-                        response = sc.nextInt();
-                        if (response == 1) {
-                            beverage blacktea = new blacktea();
-                            coffee = blacktea.getDescription() + cost() + "원";
-                            //question2tea = false;
-                            return;
-                        } else if (response == 2) {
-                            beverage matcha = new matcha();
-                            coffee = matcha.getDescription() + cost() + "원";
-                            //question2tea = false;
-                            return;
-                        } else {
-                            System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
-                            continue;
-                        }
-                        //question2tea = false;
-                    }
-                default:
-                    System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
+            if (response == 1) {
+                System.out.println("아메리카노를 주문합니다.");
+                //TODO:
+                americano americano = new americano();
+                coffee = "아메리카노 ";
+                selectTopping();
+                break;
+            } else if (response == 2) {
+                System.out.println("라떼를 주문합니다.");
+                //TODO:
+                latte latte = new latte();
+                coffee = "라떼 ";
+                selectTopping();
+                break;
+            } else if (response == 3) {
+                response = sc.nextInt();
+                System.out.println("프라푸치노 종류를 선택하세요.\n1.초콜릿 2.바닐라");
+                if (response == 1) {
+                    System.out.println("초콜릿 프라푸치노를 주문합니다.");
+                    //TODO:
+                    chocolateFrappuccino chocolateFrappuccino = new chocolateFrappuccino();
+                    coffee = "초콜릿 프라푸치노 ";
+                    selectTopping();
+                    break;
+                } else if (response == 2) {
+                    System.out.println("바닐라 프라푸치노를 주문합니다.");
+                    //TODO:
+                    vanillaFrappuccino vanillaFrappuccino = new vanillaFrappuccino();
+                    coffee = "바닐라 프라푸치노 ";
+                    selectTopping();
+                    break;
+                }
+            } else if (response == 4) {
+                response = sc.nextInt();
+                System.out.println("스무디 종류를 선택하세요.\n1.딸기 2.키위");
+                if (response == 1) {
+                    System.out.println("딸기 스무디를 주문합니다.");
+                    //TODO:
+                    strawberrySmoothie strawberrySmoothie = new strawberrySmoothie();
+                    coffee = "딸기 스무디 ";
+                    selectTopping();
+                    break;
+                } else if (response == 2) {
+                    System.out.println("키위 스무디를 주문합니다.");
+                    //TODO:
+                    kiwiSmoothie kiwiSmoothie = new kiwiSmoothie();
+                    coffee = "키위 스무디 ";
+                    selectTopping();
+                    break;
+                }
+            } else if (response == 5) {
+                response = sc.nextInt();
+                System.out.println("차 종류를 선택하세요.\n1.녹차 2.말차");
+                if (response == 1) {
+                    System.out.println("홍차를 주문합니다.");
+                    //TODO:
+                    blacktea blacktea = new blacktea();
+                    coffee = "홍차 ";
+                    selectTopping();
+                    break;
+                } else if (response == 2) {
+                    System.out.println("말차를 주문합니다.");
+                    //TODO:
+                    matcha matcha = new matcha();
+                    coffee = "말차 ";
+                    selectTopping();
+                    break;
+                } else {
+                    System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+                }
             }
-            System.out.println(coffee + "커피"); //TODO: 지우기
         }
     }
 
-    //주문 토핑 종류 확인
-    public void orderOption() {
+    public void selectTopping() {
         boolean question3 = true;
-        System.out.println("옵션을 선택하세요.\n1.아이스 2.샷 3.시럽 4.휘핑 5.선택 안 함");
+        int ice = 0, shot = 0, whip = 0, syrup = 0;
         while (question3) {
+            System.out.println("토핑을 선택하세요.\n1.얼음 2.샷 3.휘핑 4.시럽 5.추가 안 함");
             response = sc.nextInt();
-            switch (response) {
-                case 1:
-                    extra ice = new ice();
-                    option = option + ice.getDescription() + " ";
-                    continue;
-                case 2:
-                    extra shot = new shot();
-                    option = option + shot.getDescription() + " ";
-                    continue;
-                case 3:
-                    extra syrup = new syrup();
-                    option = option + syrup.getDescription() + " ";
-                    continue;
-                case 4:
-                    extra whip = new whip();
-                    option = option + whip.getDescription() + " ";
-                    continue;
-                case 5:
-                    System.out.println("토핑을 선택하지 않습니다.");
-                    return;
-                default:
-                    System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+            if (response == 1) {
+                if (ice == 0) {
+                    System.out.println("아이스로 주문합니다.");
+                    ice++;
+                } else if (ice != 1) {
+                    System.out.println("이미 선택한 옵션입니다..");
+                }
+            } else if (response == 2) {
+                if (shot == 0) {
+                    System.out.println("샷을 추가합니다.");
+                    shot++;
+                } else if (shot != 0) {
+                    System.out.println("이미 선택한 옵션입니다.");
+                }
+            } else if (response == 3) {
+                if (whip == 0) {
+                    System.out.println("휘핑을 추가합니다.");
+                    whip++;
+                } else if (whip != 0) {
+                    System.out.println("이미 선택한 옵션입니다.");
+                }
+            } else if(response==4){
+                System.out.println("시럽을 추가합니다.");
+                syrup++;
+            } else if (response == 5) {
+                System.out.println("토핑 추가를 종료합니다.");
+                check();
+            } else {
+                System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
-            System.out.println(option + "옵션"); //TODO: 지우기
         }
     }
 
     public void check() {
-        drink = option + coffee;
         System.out.println(drink);
     }
 }
