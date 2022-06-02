@@ -15,15 +15,13 @@ public class beverageMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        beverage orderCheck = new beverage() {
+        beverage bev = new beverage() {
             @Override
             public int cost() {
-                return 0;
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };
-        orderCheck.orderCheck();
-        
+        bev.orderCheck();
+        bev.drinkFinal();
     }
-    
 }
