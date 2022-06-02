@@ -7,14 +7,12 @@ package design_project.md;
 
 /**
  *
- * @author 이혜리
+ * @author lhl63
  */
-public class teabag extends MD{
-    public String cost() {
-        return "30";
+public class unmessage implements messageBehavior {
+
+    public String message() {
+        return "";
     }
 
-    public String exhibit() {
-        return "티백";
-    }
 }

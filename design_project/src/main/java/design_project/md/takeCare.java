@@ -10,7 +10,7 @@ package design_project.md;
  * @author 이혜리
  */
 public class takeCare implements messageBehavior{
-    public void message(){
-        
+    public String message(){
+        return "건강하세요";
     }
 }

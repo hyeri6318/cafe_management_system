@@ -10,7 +10,7 @@ package design_project.md;
  * @author 이혜리
  */
 public class love implements messageBehavior{
-    public void message(){
-        
+    public String message(){
+        return "사랑합니다";
     }
 }

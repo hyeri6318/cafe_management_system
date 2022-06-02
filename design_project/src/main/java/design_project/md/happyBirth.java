@@ -10,7 +10,7 @@ package design_project.md;
  * @author 이혜리
  */
 public class happyBirth implements messageBehavior{
-    public void message(){
-        
+    public String message(){
+        return "생일축하합니다";
     }
 }

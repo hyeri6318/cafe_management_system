@@ -10,7 +10,7 @@ package design_project.md;
  * @author 이혜리
  */
 public class deliveryWrap implements wrapBehavior{
-    public void wrap(){
-        
+    public String wrap(){
+        return "택배포장";
     }
 }

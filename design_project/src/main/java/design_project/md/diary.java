@@ -10,15 +10,11 @@ package design_project.md;
  * @author 이혜리
  */
 public class diary extends MD{
-    public diary(){
-        
+    public String cost() {
+       return "20";
     }
-    
-    public void cost(){
-        
-    }
-    
-    public void exhibit(){
-        System.out.print("다이어리");
+
+    public String exhibit() {
+       return "다이어리";
     }
 }

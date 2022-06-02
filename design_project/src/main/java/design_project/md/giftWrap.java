@@ -10,7 +10,7 @@ package design_project.md;
  * @author 이혜리
  */
 public class giftWrap implements wrapBehavior{
-    public void wrap(){
-        
+    public String wrap(){
+       return "선물포장";
     }
 }

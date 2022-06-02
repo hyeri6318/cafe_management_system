@@ -10,17 +10,13 @@ package design_project.md;
  * @author 이혜리
  */
 public class cup extends MD{
-    String mdName=null;
-    
-    public cup(){
-        
+    public String cost() {
+        //System.out.print("10");
+        return "10";
     }
-    
-    public void cost(){
-        
-    }
-    
-    public void exhibit(){
-        System.out.print("컵");
+
+    public String exhibit() {
+        //System.out.print("컵");
+        return "컵";
     }
 }

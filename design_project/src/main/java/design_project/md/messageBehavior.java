@@ -10,5 +10,5 @@ package design_project.md;
  * @author 이혜리
  */
 public interface messageBehavior {
-    public void message();
+    public String message();
 }
