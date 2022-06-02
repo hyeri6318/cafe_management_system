@@ -32,7 +32,7 @@ public class removeClient {
     public void doRemove(){
            Scanner sc = new Scanner(System.in);
            
-           System.out.print("아이디 : ");
+           System.out.println("아이디 : ");
            ID = sc.nextLine();
            
            remove();
@@ -107,7 +107,7 @@ public class removeClient {
             }
             
             if(end==-1){
-                System.out.print("없는 정보 입니다.\n");
+                System.out.println("없는 정보 입니다.\n");
             }
                     
         } catch(Exception e){

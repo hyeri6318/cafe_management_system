@@ -26,15 +26,15 @@ public class CreateFile {
 
         try {
             if (client.createNewFile()) {
-                System.out.print("고객 파일 생성 완료\n");
+                System.out.println("고객 파일 생성 완료\n");
             } else {
-                System.out.print("이미 고객 파일이 생성되어 있습니다.\n");
+                System.out.println("이미 고객 파일이 생성되어 있습니다.\n");
             }
 
             if (order.createNewFile()) {
-                System.out.print("주문 파일 생성 완료\n");
+                System.out.println("주문 파일 생성 완료\n");
             } else {
-                System.out.print("이미 주문 파일이 생성되어 있습니다.\n");
+                System.out.println("이미 주문 파일이 생성되어 있습니다.\n");
             }
 
         } catch (IOException e) {
