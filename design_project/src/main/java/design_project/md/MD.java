@@ -5,7 +5,7 @@
  */
 package design_project.md;
 
-import design_project.FileSystem.createFile;
+import design_project.FileSystem.CreateFile;
 import design_project.client.login;
 import java.io.File;
 import java.io.FileWriter;
@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public abstract class MD {
 
-    String URL = createFile.URL + "\\order.txt";
+    String URL = CreateFile.URL + "\\order.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;

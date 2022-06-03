@@ -13,7 +13,7 @@ import java.io.IOException;
  *
  * @author 이혜리
  */
-public class createFile {
+public class CreateFile {
 
     public static String URL = "C:\\git\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
 
