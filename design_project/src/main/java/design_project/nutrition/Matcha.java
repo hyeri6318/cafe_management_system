@@ -47,7 +47,7 @@ public class Matcha {
   }
 @Override
  public String toString() {
-      return  "Matcha ServingSize: "+ServingSize+" [calories: "+calories+"protein: "+protein+"carbohydrate: "+carbohydrate+"fat: "+fat+"sodium: "+sodium+"sugar: "+sugar+"]";
+      return  "말차 제공량 : "+ServingSize+" [칼로리 : "+calories+", 단백질 : "+protein+", 탄수화물 : "+carbohydrate+", 지방 : "+fat+", 나트륨 : "+sodium+", 당 : "+sugar+"]";
     }
              
              

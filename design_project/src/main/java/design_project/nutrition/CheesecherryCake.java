@@ -47,7 +47,7 @@ public class CheesecherryCake {
   }
 @Override
  public String toString() {
-      return  "CheesecherryCake ServingSize: "+ServingSize+" [calories: "+calories+"protein: "+protein+"carbohydrate: "+carbohydrate+"fat: "+fat+"sodium: "+sodium+"sugar: "+sugar+"]";
+      return  "체리 치즈 케이크 제공량 : "+ServingSize+" [칼로리 : "+calories+", 단백질 : "+protein+", 탄수화물 : "+carbohydrate+", 지방 : "+fat+", 나트륨 : "+sodium+", 당 : "+sugar+"]";
     }
              
              

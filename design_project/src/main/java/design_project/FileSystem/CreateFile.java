@@ -37,19 +37,19 @@ public class CreateFile {
             if (beverage.createNewFile()) {
                 System.out.println("음료 파일 생성 완료");
             } else {
-                System.out.println("이미 주문 파일이 생성되어 있습니다.");
+                System.out.println("이미 음료 파일이 생성되어 있습니다.");
             }
 
             if (cake.createNewFile()) {
                 System.out.println("케이크 파일 생성 완료");
             } else {
-                System.out.println("이미 주문 파일이 생성되어 있습니다.");
+                System.out.println("이미 케이크 파일이 생성되어 있습니다.");
             }
 
             if (MD.createNewFile()) {
                 System.out.println("MD 파일 생성 완료");
             } else {
-                System.out.println("이미 주문 파일이 생성되어 있습니다.");
+                System.out.println("이미 MD 파일이 생성되어 있습니다.");
             }
         } catch (IOException e) {
             e.printStackTrace();
