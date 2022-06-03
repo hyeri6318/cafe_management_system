@@ -11,7 +11,7 @@ package design_project.md;
  */
 public class tumbler extends MD{
     public String cost() {
-        return "40000원";
+        return "40000원 ";
     }
 
     public String exhibit() {

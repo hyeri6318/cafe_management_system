@@ -77,22 +77,26 @@ public abstract class MD {
     public void md_buy() {
         boolean question2 = true;
 
-        System.out.println("주문할 MD를 선택해 주세요.\n 1.텀블러 2.다이어리 3.컵 4.티백");
-        response = sc.nextInt();
-
         while (question2) {
+            System.out.println("주문할 MD를 선택해 주세요.\n 1.텀블러 2.다이어리 3.컵 4.티백");
+            response = sc.nextInt();
+
             if (response == 1) {
                 mdName = new tumbler();
                 md_extra1();
+                break;
             } else if (response == 2) {
                 mdName = new diary();
                 md_extra1();
+                break;
             } else if (response == 3) {
                 mdName = new cup();
                 md_extra1();
+                break;
             } else if (response == 4) {
                 mdName = new teabag();
                 md_extra1();
+                break;
             } else {
                 System.out.println("잘못된 입력입니다.");
             }
@@ -102,15 +106,17 @@ public abstract class MD {
     public void md_extra1() {
         boolean question3 = true;
 
-        System.out.println("1.메시지 작성하기 2.메시지 작성 안함");
-        response = sc.nextInt();
-
         while (question3) {
+            System.out.println("1.메시지 작성하기 2.메시지 작성 안함");
+            response = sc.nextInt();
+
             if (response == 1) {
                 md_message();
+                break;
             } else if (response == 2) {
                 mdName.setMessageBehavior(new unmessage());
                 extra2();
+                break;
             } else {
                 System.out.println("잘못된 입력입니다");
             }
@@ -120,20 +126,22 @@ public abstract class MD {
     public void md_message() {
         boolean question4 = true;
 
-        System.out.println("1.생일축하합니다. 2. 사랑합니다. 3. 건강하세요.");
-        response = sc.nextInt();
-
         while (question4) {
+            System.out.println("1.생일축하합니다. 2. 사랑합니다. 3. 건강하세요.");
+            response = sc.nextInt();
+
             if (response == 1) {
                 mdName.setMessageBehavior(new happyBirth());
                 extra2();
-
+                break;
             } else if (response == 2) {
                 mdName.setMessageBehavior(new love());
                 extra2();
+                break;
             } else if (response == 3) {
                 mdName.setMessageBehavior(new takeCare());
                 extra2();
+                break;
             } else {
                 System.out.println("잘못된 입력입니다");
             }
@@ -143,16 +151,17 @@ public abstract class MD {
     public void extra2() {
         boolean question5 = true;
 
-        System.out.println("1.포장하기 2.포장 안함");
-        response = sc.nextInt();
-
         while (question5) {
+            System.out.println("1.포장하기 2.포장 안함");
+            response = sc.nextInt();
+
             if (response == 1) {
                 md_wrap();
+                break;
             } else if (response == 2) {
                 mdName.setWrapBehavior(new unwrap());
                 MD_Final();
-                return;
+                break;
             } else {
                 System.out.println("잘못된 입력입니다");
             }
@@ -161,18 +170,19 @@ public abstract class MD {
 
     public void md_wrap() {
         boolean question6 = true;
-        System.out.println("1.택배 포장 2.선물 포장");
-        response = sc.nextInt();
 
         while (question6) {
+            System.out.println("1.택배 포장 2.선물 포장");
+            response = sc.nextInt();
+
             if (response == 1) {
                 mdName.setWrapBehavior(new deliveryWrap());
                 MD_Final();
-                return;
+                break;
             } else if (response == 2) {
                 mdName.setWrapBehavior(new giftWrap());
                 MD_Final();
-                return;
+                break;
             } else {
                 System.out.println("잘못된 입력입니다.");
             }
