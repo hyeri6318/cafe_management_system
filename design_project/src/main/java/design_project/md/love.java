@@ -11,6 +11,6 @@ package design_project.md;
  */
 public class love implements messageBehavior{
     public String message(){
-        return "사랑합니다";
+        return "메시지 : 사랑합니다, ";
     }
 }

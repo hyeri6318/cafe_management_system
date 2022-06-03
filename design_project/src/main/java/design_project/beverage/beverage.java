@@ -5,8 +5,12 @@
  */
 package design_project.beverage;
 
+import design_project.FileSystem.CreateFile;
+import design_project.client.Login;
 import java.io.File;
 import java.io.FileWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -14,6 +18,8 @@ import java.util.Scanner;
  * @author 윤채민
  */
 public abstract class beverage {
+
+    String URL = CreateFile.URL + "\\order.txt";
 
     public String Description = "beverage";
 
@@ -152,24 +158,28 @@ public abstract class beverage {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
+        createFile();
     }
 
-    public void drinkFinal() {
-        //  String URL = "C:\\Users\\yooun\\Desktop\\cafe_test_txt";
-        String s = "/";
-        String n = "\n";
+    public void createFile() {
         try {
-            File file = new File("C:\\Users\\yooun\\Desktop\\cafe_test_txt");
+            String s = "/";
+            String n = "\n";
+
+            File file = new File(URL);
             FileWriter writer;
+
+            Charset cs = StandardCharsets.UTF_8;
+
             writer = new FileWriter(file, true);
+            writer.write(Login.id);
+            writer.write(s);
             writer.write(Description);
-           // writer.write(sub);
             writer.write(n);
 
             writer.flush();
             writer.close();
 
-            System.out.println("음료 주문 완료");
         } catch (Exception e) {
             e.printStackTrace();
         }

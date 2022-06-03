@@ -1,5 +1,7 @@
 package design_project.cake;
 
+import design_project.FileSystem.CreateFile;
+import design_project.client.Login;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -15,6 +17,8 @@ import java.util.Scanner;
  * @author 윤채민
  */
 public class cake {
+
+    String URL = CreateFile.URL + "\\order.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;
@@ -98,29 +102,47 @@ public class cake {
                 jamName = "사과 ";
                 cakeFinal = sheetName + jamName + "케이크";
                 System.out.println(cakeFinal);
-                cakefinal();
                 break;
             } else if (response == 2) {
                 System.out.println("블루베리 잼을 선택하셨습니다.");
                 jamName = "블루베리 ";
                 cakeFinal = sheetName + jamName + "케이크";
                 System.out.println(cakeFinal);
-                cakefinal();
                 break;
             } else if (response == 3) {
                 System.out.println("체리 잼을 선택하셨습니다.");
                 jamName = "체리  ";
                 cakeFinal = sheetName + jamName + "케이크";
                 System.out.println(cakeFinal);
-                cakefinal();
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
+        createFile();
     }
 
-    public void cakefinal() {
+    public void createFile() {
+        try {
+            String s = "/";
+            String n = "\n";
 
+            File file = new File(URL);
+            FileWriter writer;
+
+            Charset cs = StandardCharsets.UTF_8;
+
+            writer = new FileWriter(file, true);
+            writer.write(Login.id);
+            writer.write(s);
+            writer.write(cakeFinal);
+            writer.write(n);
+
+            writer.flush();
+            writer.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

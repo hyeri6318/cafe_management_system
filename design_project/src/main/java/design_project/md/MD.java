@@ -58,15 +58,15 @@ public abstract class MD {
         boolean question1 = true;
 
         while (question1) {
-            System.out.print("MD를 주문하시겠습니까?\n 1.예 2.아니오\n");
+            System.out.println("MD를 주문하시겠습니까?\n 1.예 2.아니오");
             response = sc.nextInt();
 
             if (response == 1) {
-                System.out.print("MD를 주문합니다.");
+                System.out.println("MD를 주문합니다.");
                 md_buy();
                 break;
             } else if (response == 2) {
-                System.out.print("MD를 주문하지 않습니다.");
+                System.out.println("MD를 주문하지 않습니다.");
                 question1 = false;
             } else {
                 System.out.println("잘못된 입력입니다.");
@@ -75,8 +75,7 @@ public abstract class MD {
     }
 
     public void md_buy() {
-        boolean question2 = true;
-        System.out.print("주문할 MD를 선택해 주세요.\n 1.텀블러 2.다이어리 3.컵 4.티백\n");
+        System.out.println("주문할 MD를 선택해 주세요.\n 1.텀블러 2.다이어리 3.컵 4.티백");
         response = sc.nextInt();
 
         if (response == 1) {
@@ -97,8 +96,7 @@ public abstract class MD {
     }
 
     public void md_extra1() {
-        boolean question3 = true; //TODO: variable question3 is unused
-        System.out.print("1.메시지 작성하기 2.메시지 작성 안함 3. 종료\n");
+        System.out.println("1.메시지 작성하기 2.메시지 작성 안함");
         response = sc.nextInt();
 
         if (response == 1) {
@@ -106,14 +104,12 @@ public abstract class MD {
         } else if (response == 2) {
             mdName.setMessageBehavior(new unmessage());
             extra2();
-        } else if (response == 3) {
-            System.out.print("시스템 종료");
-            question3 = false;
+        } else{
+            System.out.println("잘못된 입력입니다");
         }
     }
 
     public void md_message() {
-        boolean question4 = true;
         System.out.println("1.생일축하합니다. 2. 사랑합니다. 3. 건강하세요.");
         response = sc.nextInt();
 
@@ -133,8 +129,7 @@ public abstract class MD {
     }
 
     public void extra2() {
-        boolean question4 = true; //TODO: variable question3 is unused
-        System.out.print("1.포장하기 2.포장 안함 3. 종료\n");
+        System.out.println("1.포장하기 2.포장 안함");
         response = sc.nextInt();
 
         if (response == 1) {
@@ -143,9 +138,8 @@ public abstract class MD {
             mdName.setWrapBehavior(new unwrap());
             show();
             return;
-        } else if (response == 3) {
-            System.out.print("시스템 종료");
-            question4 = false;
+        } else{
+            System.out.println("잘못된 입력입니다");
         }
     }
 
@@ -196,10 +190,6 @@ public abstract class MD {
 
             writer.flush();
             writer.close();
-
-            System.out.print(Login.id);
-
-            System.out.println("저장완료");
 
         } catch (Exception e) {
             e.printStackTrace();

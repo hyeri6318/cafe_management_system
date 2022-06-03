@@ -5,6 +5,8 @@
  */
 package design_project.client;
 
+import design_project.beverage.beverage;
+import design_project.cake.cake;
 import design_project.md.MD;
 import design_project.nutrition.nutrition_main;
 import java.io.BufferedReader;
@@ -42,6 +44,15 @@ public class Login {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
+    
+    beverage b = new beverage() {
+        @Override
+        public int cost() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    };
+    
+    cake c = new cake();
 
     public Login(String URL) {
         this.URL = URL;
@@ -110,6 +121,8 @@ public class Login {
             System.out.println("로그인 성공\n");
             System.out.println("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
             n.nutrition();
+            b.orderCheck();
+            c.orderCheck();
             m.buy();
         } else {
             System.out.println("로그인 실패\n");

@@ -11,6 +11,6 @@ package design_project.md;
  */
 public class takeCare implements messageBehavior{
     public String message(){
-        return "건강하세요";
+        return "메시지 : 건강하세요, ";
     }
 }

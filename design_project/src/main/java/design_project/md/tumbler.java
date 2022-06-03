@@ -11,10 +11,10 @@ package design_project.md;
  */
 public class tumbler extends MD{
     public String cost() {
-        return "40";
+        return "40000원";
     }
 
     public String exhibit() {
-       return "텀블러";
+       return "텀블러, ";
     }
 }

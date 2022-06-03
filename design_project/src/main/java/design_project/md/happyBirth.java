@@ -11,6 +11,6 @@ package design_project.md;
  */
 public class happyBirth implements messageBehavior{
     public String message(){
-        return "생일축하합니다";
+        return "메시지 : 생일축하합니다, ";
     }
 }
