@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public abstract class MD {
 
-    String URL = CreateFile.URL + "\\order.txt";
+    String URL = CreateFile.URL + "\\MD.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;

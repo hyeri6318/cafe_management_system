@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public abstract class beverage {
 
-    String URL = CreateFile.URL + "\\order.txt";
+    String URL = CreateFile.URL + "\\beverage.txt";
 
     public String Description = "beverage";
 
