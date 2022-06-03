@@ -5,6 +5,12 @@
  */
 package design_project.md;
 
+import design_project.FileSystem.CreateFile;
+import design_project.client.Login;
+import java.io.File;
+import java.io.FileWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -12,6 +18,9 @@ import java.util.Scanner;
  * @author 이혜리
  */
 public abstract class MD {
+
+    String URL = CreateFile.URL + "\\order.txt";
+
     Scanner sc = new Scanner(System.in);
     int response = 0;
 
@@ -154,7 +163,7 @@ public abstract class MD {
             show();
             return;
         } else {
-            System.out.print("잘못된 입력입니다.");
+            System.out.println("잘못된 입력입니다.");
         }
     }
 
@@ -166,9 +175,34 @@ public abstract class MD {
 
         md_result = md_name + md_message + md_wrap + md_cost;
         System.out.print(md_result);
+        createFile();
     }
 
     public void createFile() {
+        try {
+            String s = "/";
+            String n = "\n";
 
+            File file = new File(URL);
+            FileWriter writer;
+
+            Charset cs = StandardCharsets.UTF_8;
+
+            writer = new FileWriter(file, true);
+            writer.write(Login.id);
+            writer.write(s);
+            writer.write(md_result);
+            writer.write(n);
+
+            writer.flush();
+            writer.close();
+
+            System.out.print(Login.id);
+
+            System.out.println("저장완료");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

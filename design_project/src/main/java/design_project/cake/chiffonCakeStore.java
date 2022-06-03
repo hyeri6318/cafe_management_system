@@ -5,8 +5,6 @@
  */
 package design_project.cake;
 
-package cse.oop2.cake_factory;
-
 /**
  *
  * @author 윤채민

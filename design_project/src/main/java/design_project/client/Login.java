@@ -5,6 +5,7 @@
  */
 package design_project.client;
 
+import design_project.md.MD;
 import design_project.nutrition.nutrition_main;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,8 +27,21 @@ public class Login {
 
     String ID = null;
     String PW = null;
-    
+
+    public static String id = null;
+
     nutrition_main n = new nutrition_main();
+    MD m = new MD() {
+        @Override
+        public String cost() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public String exhibit() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    };
 
     public Login(String URL) {
         this.URL = URL;
@@ -38,7 +52,8 @@ public class Login {
 
         System.out.println("아이디 : ");
         ID = sc.nextLine();
-
+        id=ID;
+        
         System.out.println("비밀번호 : ");
         PW = sc.nextLine();
 
@@ -95,6 +110,7 @@ public class Login {
             System.out.println("로그인 성공\n");
             System.out.println("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
             n.nutrition();
+            m.buy();
         } else {
             System.out.println("로그인 실패\n");
             DoLogin();

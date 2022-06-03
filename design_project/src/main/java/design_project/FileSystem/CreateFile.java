@@ -14,9 +14,10 @@ import java.io.IOException;
  * @author 이혜리
  */
 public class CreateFile {
-    
+
+    public static String URL = "C:\\git\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
+
     public void Create() {
-        String URL = "C:\\git\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
         //Scanner sc = new Scanner(System.in);
 
         //System.out.print("파일 경로를 입력하세요(※info 경로까지만 입력 부탁드립니다.) : ");
