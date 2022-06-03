@@ -113,7 +113,7 @@ public class cake {
                 System.out.println("체리 잼을 선택하셨습니다.");
                 jamName = "체리  ";
                 cakeFinal = sheetName + jamName + "케이크";
-                System.out.println(cakeFinal);
+                System.out.println(cakeFinal + "주문 완료");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");

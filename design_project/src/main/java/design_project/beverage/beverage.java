@@ -152,7 +152,7 @@ public abstract class beverage {
             } else if (response == 5) {
                 System.out.println("토핑 추가를 종료합니다.");
                 Description = ice + shot + "샷 시럽" + syrup + "펌프 " + Description;
-                System.out.println(Description);
+                System.out.println(Description + "주문 완료");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");

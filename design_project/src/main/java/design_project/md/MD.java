@@ -75,100 +75,118 @@ public abstract class MD {
     }
 
     public void md_buy() {
+        boolean question2 = true;
+
         System.out.println("주문할 MD를 선택해 주세요.\n 1.텀블러 2.다이어리 3.컵 4.티백");
         response = sc.nextInt();
 
-        if (response == 1) {
-            mdName = new tumbler();
-            md_extra1();
-        } else if (response == 2) {
-            mdName = new diary();
-            md_extra1();
-        } else if (response == 3) {
-            mdName = new cup();
-            md_extra1();
-        } else if (response == 4) {
-            mdName = new teabag();
-            md_extra1();
-        } else {
-            System.out.println("잘못된 입력입니다.");
+        while (question2) {
+            if (response == 1) {
+                mdName = new tumbler();
+                md_extra1();
+            } else if (response == 2) {
+                mdName = new diary();
+                md_extra1();
+            } else if (response == 3) {
+                mdName = new cup();
+                md_extra1();
+            } else if (response == 4) {
+                mdName = new teabag();
+                md_extra1();
+            } else {
+                System.out.println("잘못된 입력입니다.");
+            }
         }
     }
 
     public void md_extra1() {
+        boolean question3 = true;
+
         System.out.println("1.메시지 작성하기 2.메시지 작성 안함");
         response = sc.nextInt();
 
-        if (response == 1) {
-            md_message();
-        } else if (response == 2) {
-            mdName.setMessageBehavior(new unmessage());
-            extra2();
-        } else{
-            System.out.println("잘못된 입력입니다");
+        while (question3) {
+            if (response == 1) {
+                md_message();
+            } else if (response == 2) {
+                mdName.setMessageBehavior(new unmessage());
+                extra2();
+            } else {
+                System.out.println("잘못된 입력입니다");
+            }
         }
     }
 
     public void md_message() {
+        boolean question4 = true;
+
         System.out.println("1.생일축하합니다. 2. 사랑합니다. 3. 건강하세요.");
         response = sc.nextInt();
 
-        if (response == 1) {
-            mdName.setMessageBehavior(new happyBirth());
-            extra2();
+        while (question4) {
+            if (response == 1) {
+                mdName.setMessageBehavior(new happyBirth());
+                extra2();
 
-        } else if (response == 2) {
-            mdName.setMessageBehavior(new love());
-            extra2();
-        } else if (response == 3) {
-            mdName.setMessageBehavior(new takeCare());
-            extra2();
-        } else {
-            System.out.println("잘못된 입력입니다");
+            } else if (response == 2) {
+                mdName.setMessageBehavior(new love());
+                extra2();
+            } else if (response == 3) {
+                mdName.setMessageBehavior(new takeCare());
+                extra2();
+            } else {
+                System.out.println("잘못된 입력입니다");
+            }
         }
     }
 
     public void extra2() {
+        boolean question5 = true;
+
         System.out.println("1.포장하기 2.포장 안함");
         response = sc.nextInt();
 
-        if (response == 1) {
-            md_wrap();
-        } else if (response == 2) {
-            mdName.setWrapBehavior(new unwrap());
-            show();
-            return;
-        } else{
-            System.out.println("잘못된 입력입니다");
+        while (question5) {
+            if (response == 1) {
+                md_wrap();
+            } else if (response == 2) {
+                mdName.setWrapBehavior(new unwrap());
+                MD_Final();
+                return;
+            } else {
+                System.out.println("잘못된 입력입니다");
+            }
         }
     }
 
     public void md_wrap() {
-        boolean question5 = true;
+        boolean question6 = true;
         System.out.println("1.택배 포장 2.선물 포장");
         response = sc.nextInt();
 
-        if (response == 1) {
-            mdName.setWrapBehavior(new deliveryWrap());
-            show();
-            return;
-        } else if (response == 2) {
-            mdName.setWrapBehavior(new giftWrap());
-            show();
-            return;
-        } else {
-            System.out.println("잘못된 입력입니다.");
+        while (question6) {
+            if (response == 1) {
+                mdName.setWrapBehavior(new deliveryWrap());
+                MD_Final();
+                return;
+            } else if (response == 2) {
+                mdName.setWrapBehavior(new giftWrap());
+                MD_Final();
+                return;
+            } else {
+                System.out.println("잘못된 입력입니다.");
+            }
         }
     }
 
-    public void show() {
+    public void MD_Final() {
         md_name = mdName.exhibit();
         md_message = mdName.performMessage();
         md_wrap = mdName.performWrap();
         md_cost = mdName.cost();
 
         md_result = md_name + md_message + md_wrap + md_cost;
-        System.out.print(md_result);
+        System.out.println(md_result + "주문 완료");
         createFile();
     }
 
