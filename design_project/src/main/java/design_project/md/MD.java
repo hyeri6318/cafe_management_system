@@ -6,7 +6,7 @@
 package design_project.md;
 
 import design_project.FileSystem.CreateFile;
-import design_project.client.login;
+import design_project.client.Login;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.charset.Charset;
@@ -104,7 +104,7 @@ public abstract class MD {
         if (response == 1) {
             md_message();
         } else if (response == 2) {
-            mdName.setMessageBehavior(new unMessage());
+            mdName.setMessageBehavior(new unmessage());
             extra2();
         } else if (response == 3) {
             System.out.print("시스템 종료");
@@ -140,7 +140,7 @@ public abstract class MD {
         if (response == 1) {
             md_wrap();
         } else if (response == 2) {
-            mdName.setWrapBehavior(new unWrap());
+            mdName.setWrapBehavior(new unwrap());
             show();
             return;
         } else if (response == 3) {
@@ -189,7 +189,7 @@ public abstract class MD {
             Charset cs = StandardCharsets.UTF_8;
 
             writer = new FileWriter(file, true);
-            writer.write(login.id);
+            writer.write(Login.id);
             writer.write(s);
             writer.write(md_result);
             writer.write(n);
@@ -197,7 +197,7 @@ public abstract class MD {
             writer.flush();
             writer.close();
 
-            System.out.print(login.id);
+            System.out.print(Login.id);
 
             System.out.println("저장완료");
 

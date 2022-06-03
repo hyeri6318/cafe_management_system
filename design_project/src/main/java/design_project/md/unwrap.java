@@ -9,7 +9,7 @@ package design_project.md;
  *
  * @author 이혜리
  */
-public class unWrap implements wrapBehavior{
+public class unwrap implements wrapBehavior{
 
     public String wrap() {
         return "";

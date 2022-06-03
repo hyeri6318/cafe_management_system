@@ -5,7 +5,7 @@
  */
 package design_project.FileSystem;
 
-import design_project.client.first;
+import design_project.client.First;
 import java.io.File;
 import java.io.IOException;
 
@@ -42,7 +42,7 @@ public class CreateFile {
             e.printStackTrace();
         }
 
-        first f = new first(URL);
+        First f = new First(URL);
         f.Show();
     }
 }

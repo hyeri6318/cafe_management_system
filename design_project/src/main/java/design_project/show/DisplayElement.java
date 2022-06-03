@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package design_project.md;
+package design_project.show;
 
 /**
  *
- * @author 이혜리
+ * @author lhl63
  */
-public class unmessage implements messageBehavior {
+public interface DisplayElement {
 
-    public String message() {
-        return "";
-    }
+    void display();
 
 }
