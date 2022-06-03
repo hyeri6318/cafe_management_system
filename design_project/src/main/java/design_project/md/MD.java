@@ -5,8 +5,8 @@
  */
 package design_project.md;
 
-import design_project.FileSystem.CreateFile;
-import design_project.client.Login;
+import design_project.FileSystem.createFile;
+import design_project.client.login;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.charset.Charset;
@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public abstract class MD {
 
-    String URL = CreateFile.URL + "\\order.txt";
+    String URL = createFile.URL + "\\order.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;
@@ -104,7 +104,7 @@ public abstract class MD {
         if (response == 1) {
             md_message();
         } else if (response == 2) {
-            mdName.setMessageBehavior(new unmessage());
+            mdName.setMessageBehavior(new unMessage());
             extra2();
         } else if (response == 3) {
             System.out.print("시스템 종료");
@@ -140,7 +140,7 @@ public abstract class MD {
         if (response == 1) {
             md_wrap();
         } else if (response == 2) {
-            mdName.setWrapBehavior(new unwrap());
+            mdName.setWrapBehavior(new unWrap());
             show();
             return;
         } else if (response == 3) {
@@ -189,7 +189,7 @@ public abstract class MD {
             Charset cs = StandardCharsets.UTF_8;
 
             writer = new FileWriter(file, true);
-            writer.write(Login.id);
+            writer.write(login.id);
             writer.write(s);
             writer.write(md_result);
             writer.write(n);
@@ -197,7 +197,7 @@ public abstract class MD {
             writer.flush();
             writer.close();
 
-            System.out.print(Login.id);
+            System.out.print(login.id);
 
             System.out.println("저장완료");
 

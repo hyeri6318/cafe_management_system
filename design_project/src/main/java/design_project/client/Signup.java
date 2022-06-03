@@ -21,14 +21,14 @@ import java.util.Scanner;
  *
  * @author 이혜리
  */
-public class Signup {
+public class signup {
     String URL = null;
 
     private String id = null;
     private String ps = null;
     private String name = null;
 
-    public Signup(String URL) {
+    public signup(String URL) {
         this.URL = URL;
     }
 

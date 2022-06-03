@@ -16,7 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        CreateFile file = new CreateFile();
+        createFile file = new createFile();
         file.Create();
     }
     

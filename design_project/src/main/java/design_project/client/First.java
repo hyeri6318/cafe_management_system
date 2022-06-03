@@ -11,17 +11,17 @@ import java.util.Scanner;
  *
  * @author 이혜리
  */
-public class First {
+public class first {
 
     String URL = null;
 
-    public First(String URL) {
+    public first(String URL) {
         this.URL = URL + "\\client.txt";
     }
 
     public void Show() {
-        Signup s = new Signup(URL);
-        Login l = new Login(URL);
+        signup s = new signup(URL);
+        login l = new login(URL);
         changePW c = new changePW(URL);
         removeClient r = new removeClient(URL);
 

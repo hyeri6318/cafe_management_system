@@ -5,7 +5,7 @@
  */
 package design_project.FileSystem;
 
-import design_project.client.First;
+import design_project.client.first;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import java.io.IOException;
  *
  * @author 이혜리
  */
-public class CreateFile {
+public class createFile {
 
     public static String URL = "C:\\git\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
 
@@ -42,7 +42,7 @@ public class CreateFile {
             e.printStackTrace();
         }
 
-        First f = new First(URL);
+        first f = new first(URL);
         f.Show();
     }
 }

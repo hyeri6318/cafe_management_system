@@ -21,7 +21,7 @@ import java.util.Scanner;
  *
  * @author 이혜리
  */
-public class Login {
+public class login {
 
     String URL = null;
 
@@ -43,7 +43,7 @@ public class Login {
         }
     };
 
-    public Login(String URL) {
+    public login(String URL) {
         this.URL = URL;
     }
 

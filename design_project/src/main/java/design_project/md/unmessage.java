@@ -9,7 +9,7 @@ package design_project.md;
  *
  * @author lhl63
  */
-public class unmessage implements messageBehavior {
+public class unMessage implements messageBehavior {
 
     public String message() {
         return "";
