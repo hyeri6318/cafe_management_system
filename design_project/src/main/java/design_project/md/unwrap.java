@@ -7,7 +7,7 @@ package design_project.md;
 
 /**
  *
- * @author lhl63
+ * @author 이혜리
  */
 public class unWrap implements wrapBehavior{
 
