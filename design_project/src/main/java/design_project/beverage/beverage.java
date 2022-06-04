@@ -152,13 +152,33 @@ public abstract class beverage {
             } else if (response == 5) {
                 System.out.println("토핑 추가를 종료합니다.");
                 Description = ice + shot + "샷 시럽" + syrup + "펌프 " + Description;
-                System.out.println(Description + "주문 완료");
+                //System.out.println(Description + "주문 완료");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
         createFile();
+        beverage_last();
+    }
+
+    public void beverage_last() {
+        boolean question4 = true;
+
+        while (question4) {
+            System.out.println("음료를 더 주문하시겠습니까?\n 1.예 2.아니오");
+            response = sc.nextInt();
+
+            if (response == 1) {
+                selectbeverage();
+                break;
+            } else if (response == 2) {
+                System.out.println("음료 주문 완료");
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다.");
+            }
+        }
     }
 
     public void createFile() {
