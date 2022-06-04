@@ -23,7 +23,7 @@ import java.util.Scanner;
 public class CakeorderDisplay_1 implements Observer, DisplayElement {
 
     String ID = null;
-    String URL = CreateFile.URL + "\\cake.txt";
+    String URL = CreateFile.URL + "\\order.txt";
 
     private int production;
     private int time;
@@ -111,6 +111,7 @@ public class CakeorderDisplay_1 implements Observer, DisplayElement {
                 list = (ArrayList<String>) Files.readAllLines(path, cs);
 
                 ArrayList<String> list_temp = new ArrayList<String>();
+                ArrayList<String> sort_list = new ArrayList<String>();
                 ArrayList<String> id_list = new ArrayList<String>();
                 ArrayList<String> cake_list = new ArrayList<String>();
 
@@ -121,13 +122,16 @@ public class CakeorderDisplay_1 implements Observer, DisplayElement {
 
                 for (String i : list_temp) {
                     String[] temp = i.split("/");
-                    id_list.add(temp[0]);
-                    cake_list.add(temp[1]);
+                    sort_list.add(temp[0]);
+                    id_list.add(temp[1]);
+                    cake_list.add(temp[2]);
                 }
 
                 for (int i = 0; i < cake_list.size(); i++) {
-                    if (ID.equals(id_list.get(i))) {
-                        System.out.println(cake_list.get(i));
+                    if (sort_list.get(i).equals("cake")) {
+                        if (ID.equals(id_list.get(i))) {
+                            System.out.println(cake_list.get(i));
+                        }
                     }
                 }
             } catch (Exception e) {
@@ -139,4 +143,3 @@ public class CakeorderDisplay_1 implements Observer, DisplayElement {
         }
     }
 }
-

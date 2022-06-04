@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public abstract class beverage {
 
-    String URL = CreateFile.URL + "\\beverage.txt";
+    String URL = CreateFile.URL + "\\order.txt";
 
     public String Description = "beverage";
 
@@ -172,6 +172,8 @@ public abstract class beverage {
             Charset cs = StandardCharsets.UTF_8;
 
             writer = new FileWriter(file, true);
+            writer.write("beverage");
+            writer.write(s);
             writer.write(Login.id);
             writer.write(s);
             writer.write(Description);

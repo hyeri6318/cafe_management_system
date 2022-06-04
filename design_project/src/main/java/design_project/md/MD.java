@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public abstract class MD {
 
-    String URL = CreateFile.URL + "\\MD.txt";
+    String URL = CreateFile.URL + "\\order.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;
@@ -211,6 +211,8 @@ public abstract class MD {
             Charset cs = StandardCharsets.UTF_8;
 
             writer = new FileWriter(file, true);
+            writer.write("MD");
+            writer.write(s);
             writer.write(Login.id);
             writer.write(s);
             writer.write(md_result);

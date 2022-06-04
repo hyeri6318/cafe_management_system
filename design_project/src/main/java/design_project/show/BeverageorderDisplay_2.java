@@ -21,9 +21,10 @@ import java.util.Scanner;
  * @author 이혜리, 최주호
  */
 public class BeverageorderDisplay_2 implements Observer, DisplayElement {
+
     String ID = null;
-    String URL = CreateFile.URL + "\\beverage.txt";
-    
+    String URL = CreateFile.URL + "\\order.txt";
+
     private int production;
     private int time;
     private int waiting;
@@ -60,7 +61,7 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
 
         display();
     }
-    
+
     public boolean CompareID() {
         try {
             String str;
@@ -85,12 +86,11 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
 
             for (String i : list_temp) {
                 String[] temp = i.split("/");
-                id_list.add(temp[0]);
+                id_list.add(temp[1]);
             }
 
             for (int i = 0; i < id_list.size(); i++) {
                 if (ID.equals(id_list.get(i))) {
-                    //  ch = 0;
                     return true;
                 }
             }
@@ -118,6 +118,7 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
                 list = (ArrayList<String>) Files.readAllLines(path, cs);
 
                 ArrayList<String> list_temp = new ArrayList<String>();
+                ArrayList<String> sort_list = new ArrayList<String>();
                 ArrayList<String> id_list = new ArrayList<String>();
                 ArrayList<String> beverage_list = new ArrayList<String>();
 
@@ -128,13 +129,16 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
 
                 for (String i : list_temp) {
                     String[] temp = i.split("/");
-                    id_list.add(temp[0]);
-                    beverage_list.add(temp[1]);
+                    sort_list.add(temp[0]);
+                    id_list.add(temp[1]);
+                    beverage_list.add(temp[2]);
                 }
 
                 for (int i = 0; i < beverage_list.size(); i++) {
-                    if (ID.equals(id_list.get(i))) {
-                        System.out.println(beverage_list.get(i));
+                    if (sort_list.get(i).equals("beverage")) {
+                        if (ID.equals(id_list.get(i))) {
+                            System.out.println(beverage_list.get(i));
+                        }
                     }
                 }
             } catch (Exception e) {

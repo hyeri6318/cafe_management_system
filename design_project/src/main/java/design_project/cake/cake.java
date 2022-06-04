@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class cake {
 
-    String URL = CreateFile.URL + "\\cake.txt";
+    String URL = CreateFile.URL + "\\order.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;
@@ -133,6 +133,8 @@ public class cake {
             Charset cs = StandardCharsets.UTF_8;
 
             writer = new FileWriter(file, true);
+            writer.write("cake");
+            writer.write(s);
             writer.write(Login.id);
             writer.write(s);
             writer.write(cakeFinal);

@@ -23,9 +23,7 @@ public class CreateFile {
         //System.out.print("파일 경로를 입력하세요(※info 경로까지만 입력 부탁드립니다.) : ");
         //URL =  sc.nextLine();
         File client = new File(URL + "\\client.txt");
-        File beverage = new File(URL + "\\beverage.txt");
-        File cake = new File(URL + "\\cake.txt");
-        File MD = new File(URL + "\\MD.txt");
+        File order = new File(URL + "\\order.txt");
 
         try {
             if (client.createNewFile()) {
@@ -33,23 +31,11 @@ public class CreateFile {
             } else {
                 System.out.println("이미 고객 파일이 생성되어 있습니다.");
             }
-
-            if (beverage.createNewFile()) {
-                System.out.println("음료 파일 생성 완료");
+            
+            if (order.createNewFile()) {
+                System.out.println("주문 파일 생성 완료");
             } else {
-                System.out.println("이미 음료 파일이 생성되어 있습니다.");
-            }
-
-            if (cake.createNewFile()) {
-                System.out.println("케이크 파일 생성 완료");
-            } else {
-                System.out.println("이미 케이크 파일이 생성되어 있습니다.");
-            }
-
-            if (MD.createNewFile()) {
-                System.out.println("MD 파일 생성 완료");
-            } else {
-                System.out.println("이미 MD 파일이 생성되어 있습니다.");
+                System.out.println("이미 주문 파일이 생성되어 있습니다.");
             }
         } catch (IOException e) {
             e.printStackTrace();
