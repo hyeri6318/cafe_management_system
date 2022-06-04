@@ -120,6 +120,26 @@ public class cake {
             }
         }
         createFile();
+        cake_last();
+    }
+
+    public void cake_last() {
+        boolean question4 = true;
+
+        while (question4) {
+            System.out.println("케이크를 더 주문하시겠습니까?\n 1.예 2.아니오");
+            response = sc.nextInt();
+
+            if (response == 1) {
+                selectSheet();
+                break;
+            } else if (response == 2) {
+                System.out.println("케이크 주문 완료");
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다.");
+            }
+        }
     }
 
     public void createFile() {
