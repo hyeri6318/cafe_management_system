@@ -60,9 +60,8 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
 
         display();
     }
-
-    public void display() {
-
+    
+    public boolean CompareID() {
         try {
             String str;
             String[] array = null;
@@ -78,7 +77,6 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
 
             ArrayList<String> list_temp = new ArrayList<String>();
             ArrayList<String> id_list = new ArrayList<String>();
-            ArrayList<String> beverage_list = new ArrayList<String>();
 
             for (String i : list) {
                 array = i.split("\n");
@@ -88,26 +86,63 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
             for (String i : list_temp) {
                 String[] temp = i.split("/");
                 id_list.add(temp[0]);
-                beverage_list.add(temp[1]);
             }
 
-            int ch = -1;
             for (int i = 0; i < id_list.size(); i++) {
                 if (ID.equals(id_list.get(i))) {
-                    System.out.println(beverage_list.get(i));
-                    ch = 0;
-                } else {
-                    ch = -1;
+                    //  ch = 0;
+                    return true;
                 }
             }
-
-            if (ch == -1) {
-                System.out.println("아이디 불일치\n");
-                show();
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void display() {
+
+        if (CompareID() == true) {
+            System.out.println("[음료 주문 내역]");
+            try {
+                String str;
+                String[] array = null;
+
+                BufferedReader is = new BufferedReader(new FileReader(URL));
+
+                Path path = Paths.get(URL);
+
+                Charset cs = StandardCharsets.UTF_8;
+
+                ArrayList<String> list = new ArrayList<String>();
+                list = (ArrayList<String>) Files.readAllLines(path, cs);
+
+                ArrayList<String> list_temp = new ArrayList<String>();
+                ArrayList<String> id_list = new ArrayList<String>();
+                ArrayList<String> beverage_list = new ArrayList<String>();
+
+                for (String i : list) {
+                    array = i.split("\n");
+                    list_temp.add(array[0]);
+                }
+
+                for (String i : list_temp) {
+                    String[] temp = i.split("/");
+                    id_list.add(temp[0]);
+                    beverage_list.add(temp[1]);
+                }
+
+                for (int i = 0; i < beverage_list.size(); i++) {
+                    if (ID.equals(id_list.get(i))) {
+                        System.out.println(beverage_list.get(i));
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("아이디 불일치\n");
+            show();
         }
     }
 }
