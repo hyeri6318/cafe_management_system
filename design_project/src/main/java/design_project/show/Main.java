@@ -32,10 +32,10 @@ public class Main {
     }
          */
         OrderstatusData orderstatusData = new OrderstatusData();
-        DessertorderDisplay_1 dessertorderDisplay
-                = new DessertorderDisplay_1(orderstatusData);
+        CakeorderDisplay_1 cakeorderDisplay
+                = new CakeorderDisplay_1(orderstatusData);
 
-        BeverageorderDisplay_2 BeverageorderDisplay
+        BeverageorderDisplay_2 beveragegeorderDisplay
                 = new BeverageorderDisplay_2(orderstatusData);
 
         orderstatusData.setmeasurements(8, 9, 4);

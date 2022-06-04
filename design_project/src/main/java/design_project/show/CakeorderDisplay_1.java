@@ -18,18 +18,20 @@ import java.util.Scanner;
 
 /**
  *
- * @author 이혜리, 최주호
+ * @author lhl63
  */
-public class BeverageorderDisplay_2 implements Observer, DisplayElement {
+public class CakeorderDisplay_1 implements Observer, DisplayElement {
+
     String ID = null;
-    String URL = CreateFile.URL + "\\beverage.txt";
-    
+    String URL = CreateFile.URL + "\\cake.txt";
+
     private int production;
     private int time;
     private int waiting;
+
     private Subject orderstatusData;
 
-    public BeverageorderDisplay_2(Subject orderstatusData) {
+    public CakeorderDisplay_1(Subject orderstatusData) {
 
         this.orderstatusData = orderstatusData;
         orderstatusData.registerobserver(this);
@@ -43,18 +45,10 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
         //display();
     }
 
-    /*
-  public void display() {
-      System.out.print("\n음료 주문현황==>");
-   System.out.print("대기 인원 :" + waiting);
-   System.out.print("\t제작 현황 :" + production);
-  System.out.print("\t예상 시간 :" + time);
-  }
-     */
     public void show() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("음료 주문 조회를 시작합니다");
+        System.out.println("케이크 주문 조회를 시작합니다");
         System.out.println("아이디 입력");
         ID = sc.nextLine();
 
@@ -78,7 +72,7 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
 
             ArrayList<String> list_temp = new ArrayList<String>();
             ArrayList<String> id_list = new ArrayList<String>();
-            ArrayList<String> beverage_list = new ArrayList<String>();
+            ArrayList<String> cake_list = new ArrayList<String>();
 
             for (String i : list) {
                 array = i.split("\n");
@@ -88,13 +82,13 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
             for (String i : list_temp) {
                 String[] temp = i.split("/");
                 id_list.add(temp[0]);
-                beverage_list.add(temp[1]);
+                cake_list.add(temp[1]);
             }
 
             int ch = -1;
             for (int i = 0; i < id_list.size(); i++) {
                 if (ID.equals(id_list.get(i))) {
-                    System.out.println(beverage_list.get(i));
+                    System.out.println(cake_list.get(i));
                     ch = 0;
                 } else {
                     ch = -1;
@@ -111,3 +105,4 @@ public class BeverageorderDisplay_2 implements Observer, DisplayElement {
         }
     }
 }
+
