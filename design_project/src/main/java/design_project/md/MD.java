@@ -161,6 +161,7 @@ public abstract class MD {
             } else if (response == 2) {
                 mdName.setWrapBehavior(new unwrap());
                 MD_Final();
+                md_last();
                 break;
             } else {
                 System.out.println("잘못된 입력입니다");
@@ -178,10 +179,31 @@ public abstract class MD {
             if (response == 1) {
                 mdName.setWrapBehavior(new deliveryWrap());
                 MD_Final();
+                md_last();
                 break;
             } else if (response == 2) {
                 mdName.setWrapBehavior(new giftWrap());
                 MD_Final();
+                md_last();
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다.");
+            }
+        }
+    }
+
+    public void md_last() {
+        boolean question7 = true;
+
+        while (question7) {
+            System.out.println("MD 상품을 더 구매하시겠습니까?\n 1.예 2.아니오");
+            response = sc.nextInt();
+
+            if (response == 1) {
+                md_buy();
+                break;
+            } else if (response == 2) {
+                System.out.println("MD 주문 완료");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다.");
@@ -196,7 +218,6 @@ public abstract class MD {
         md_cost = mdName.cost();
 
         md_result = md_name + md_message + md_wrap + md_cost;
-        System.out.println(md_result + "주문 완료");
         createFile();
     }
 
