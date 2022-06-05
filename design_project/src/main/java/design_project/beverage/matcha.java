@@ -10,6 +10,8 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class matcha extends beverage {
-    public int cost() { return 4500; }
-    public matcha() { Description = "matcha"; }
+    public matcha() { 
+        Description = "말차"; 
+        cost="4500";
+    }
 }

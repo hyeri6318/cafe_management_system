@@ -10,6 +10,6 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class syrup extends extra {
-    public String getDescription(){ return "syrup"; }
-    public int cost() { return 0; }
+    public String getDescription(){ return "시럽 추가"; }
+    public String getcostDescription() { return "0";}
 }

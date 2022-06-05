@@ -10,6 +10,8 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class latte extends beverage {
-    public int cost() { return 3000; }
-    public latte() { Description = "latte"; }
+    public latte() { 
+        Description = "라떼"; 
+        cost="3000";
+    }
 }

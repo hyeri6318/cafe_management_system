@@ -19,14 +19,16 @@ import java.util.Scanner;
  */
 public abstract class beverage {
 
-    String URL = CreateFile.URL + "\\order.txt";
-
     public String Description = "beverage";
-
-    public abstract int cost();
+    public String cost="\\";
+    String URL = CreateFile.URL + "\\order.txt";
 
     public String getDescription() {
         return Description;
+    }
+    
+    public String getcostDescriptoin(){
+        return cost;
     }
 
     Scanner sc = new Scanner(System.in);
@@ -57,14 +59,16 @@ public abstract class beverage {
             response = sc.nextInt();
             if (response == 1) {
                 System.out.println("아메리카노를 주문합니다.");
-                americano americano = new americano();
-                Description = "americano ";
+                beverage americano = new americano();
+                americano.getDescription();
+                //Description = "아메리카노 ";
                 selectTopping();
                 break;
             } else if (response == 2) {
                 System.out.println("라떼를 주문합니다.");
-                latte latte = new latte();
-                Description = "latte ";
+                beverage latte = new latte();
+                latte.getDescription();
+                //Description = "라떼 ";
                 selectTopping();
                 break;
             } else if (response == 3) {
@@ -73,14 +77,16 @@ public abstract class beverage {
                 response = sc.nextInt();
                 if (response == 1) {
                     System.out.println("초콜릿 프라푸치노를 주문합니다.");
-                    chocolateFrappuccino chocolateFrappuccino = new chocolateFrappuccino();
-                    Description = "chocolate frappuccino ";
+                    beverage chocolateFrappuccino = new chocolateFrappuccino();
+                    chocolateFrappuccino.getDescription();
+                    //Description = "초콜릿 프라푸치노 ";
                     selectTopping();
                     break;
                 } else if (response == 2) {
                     System.out.println("바닐라 프라푸치노를 주문합니다.");
-                    vanillaFrappuccino vanillaFrappuccino = new vanillaFrappuccino();
-                    Description = "vanilla frappuccino ";
+                    beverage vanillaFrappuccino = new vanillaFrappuccino();
+                    vanillaFrappuccino.getDescription();
+                    //Description = "바닐라 프라푸치노 ";
                     selectTopping();
                     break;
                 }
@@ -89,14 +95,16 @@ public abstract class beverage {
                 response = sc.nextInt();
                 if (response == 1) {
                     System.out.println("딸기 스무디를 주문합니다.");
-                    strawberrySmoothie strawberrySmoothie = new strawberrySmoothie();
-                    Description = "strawberry smoothie ";
+                    beverage strawberrySmoothie = new strawberrySmoothie();
+                    strawberrySmoothie.getDescription();
+                    //Description = "딸기 스무디 ";
                     selectTopping();
                     break;
                 } else if (response == 2) {
                     System.out.println("키위 스무디를 주문합니다.");
-                    kiwiSmoothie kiwiSmoothie = new kiwiSmoothie();
-                    Description = "kiwi smoothie ";
+                    beverage kiwiSmoothie = new kiwiSmoothie();
+                    kiwiSmoothie.getDescription();
+                    //Description = "키위 스무디 ";
                     selectTopping();
                     break;
                 }
@@ -105,14 +113,16 @@ public abstract class beverage {
                 response = sc.nextInt();
                 if (response == 1) {
                     System.out.println("홍차를 주문합니다.");
-                    blacktea blacktea = new blacktea();
-                    Description = "black tea ";
+                    beverage blacktea = new blacktea();
+                    blacktea.getDescription();
+                    //Description = "홍차 ";
                     selectTopping();
                     break;
                 } else if (response == 2) {
                     System.out.println("말차를 주문합니다.");
-                    matcha matcha = new matcha();
-                    Description = "matcha ";
+                    beverage matcha = new matcha();
+                    matcha.getDescription();
+                    //Description = "말차 ";
                     selectTopping();
                     break;
                 } else {
@@ -132,8 +142,8 @@ public abstract class beverage {
             if (response == 1) {
                 if (ice.equals("")) {
                     System.out.println("아이스로 주문합니다.");
-                    ice = "iced ";
-                } else if (ice.equals("iced ")) {
+                    ice = "아이스 ";
+                } else if (ice.equals("아이스 ")) {
                     System.out.println("이미 선택한 옵션입니다..");
                 }
             } else if (response == 2) {
@@ -142,8 +152,8 @@ public abstract class beverage {
             } else if (response == 3) {
                 if (ice.equals("")) {
                     System.out.println("휘핑을 추가합니다.");
-                    whip = "whipped ";
-                } else if (whip.equals("whipped ")) {
+                    whip = "휘핑 ";
+                } else if (whip.equals("휘핑 ")) {
                     System.out.println("이미 선택한 옵션입니다..");
                 }
             } else if (response == 4) {
@@ -151,7 +161,8 @@ public abstract class beverage {
                 syrup++;
             } else if (response == 5) {
                 System.out.println("토핑 추가를 종료합니다.");
-                Description = ice + shot + "shot " + syrup + "syrup " + Description;
+                Description = ice + shot + "샷 시럽" + syrup + "펌프 " + Description;
+                System.out.println(Description);
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
@@ -165,7 +176,7 @@ public abstract class beverage {
         boolean question4 = true;
 
         while (question4) {
-            System.out.println("음료를 더 주문하시겠습니까?\n1.예 2.아니오");
+            System.out.println("음료를 더 주문하시겠습니까?\n 1.예 2.아니오");
             response = sc.nextInt();
 
             if (response == 1) {
@@ -193,7 +204,7 @@ public abstract class beverage {
             writer = new FileWriter(file, true);
             writer.write("beverage");
             writer.write(s);
-
+            
             if (Login.id == null) {
                 writer.write("");
             } else {
@@ -205,7 +216,7 @@ public abstract class beverage {
             } else {
                 writer.write(Login.nid);
             }
-
+            
             writer.write(s);
             writer.write(Description);
             writer.write(n);

@@ -47,12 +47,7 @@ public class Login {
         }
     };
 
-    beverage b = new beverage() {
-        @Override
-        public int cost() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    };
+    beverage b = new beverage() {};
 
     cake c = new cake();
 

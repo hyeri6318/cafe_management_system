@@ -10,6 +10,6 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class whip extends extra {
-    public String getDescription(){ return "whip"; }
-    public int cost() { return 0; }
+    public String getDescription(){ return "휘핑 추가"; }
+    public String getcostDescription() { return "0"; }
 }

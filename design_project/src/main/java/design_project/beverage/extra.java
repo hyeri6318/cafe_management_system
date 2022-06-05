@@ -11,4 +11,5 @@ package design_project.beverage;
  */
 public abstract class extra extends beverage {
     public abstract String getDescription();
+    public abstract String getcostDescription();
 }

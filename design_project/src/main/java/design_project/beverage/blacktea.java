@@ -10,6 +10,8 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class blacktea extends beverage {
-    public int cost() { return 4500; }
-    public blacktea() { Description = "black tea"; }
+    public blacktea() {
+        Description = "홍차"; 
+        cost="4500";
+    }
 }
