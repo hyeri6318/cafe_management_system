@@ -10,6 +10,6 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class americano extends beverage {
-    public americano() { Description = "아메리카노"; }
+    public americano() { Description = "americano"; }
     public int cost() { return 2500; }
 }

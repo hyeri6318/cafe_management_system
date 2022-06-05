@@ -11,5 +11,5 @@ package design_project.beverage;
  */
 public class kiwiSmoothie extends beverage {
     public int cost() { return 4000; }
-    public kiwiSmoothie() { Description = "키위 스무디"; }
+    public kiwiSmoothie() { Description = "kiwi smoothie"; }
 }

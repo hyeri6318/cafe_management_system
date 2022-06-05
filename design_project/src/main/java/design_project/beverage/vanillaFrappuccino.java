@@ -11,5 +11,5 @@ package design_project.beverage;
  */
 public class vanillaFrappuccino extends beverage {
     public int cost() { return 4000; }
-    public vanillaFrappuccino() { Description = "바닐라 프라푸치노"; }
+    public vanillaFrappuccino() { Description = "vanilla frappuccino"; }
 }

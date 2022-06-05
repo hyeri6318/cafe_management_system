@@ -11,5 +11,5 @@ package design_project.beverage;
  */
 public class chocolateFrappuccino extends beverage {
     public int cost() { return 4000; }
-    public chocolateFrappuccino() { Description = "초콜릿 프라푸치노"; }
+    public chocolateFrappuccino() { Description = "chocolate frappuccino"; }
 }

@@ -11,5 +11,5 @@ package design_project.beverage;
  */
 public class blacktea extends beverage {
     public int cost() { return 4500; }
-    public blacktea() { Description = "홍차"; }
+    public blacktea() { Description = "black tea"; }
 }

@@ -10,6 +10,6 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class shot extends extra {
-    public String getDescription(){ return "샷 추가"; }
+    public String getDescription(){ return "shot"; }
     public int cost() { return 500; }
 }

@@ -11,5 +11,5 @@ package design_project.beverage;
  */
 public class matcha extends beverage {
     public int cost() { return 4500; }
-    public matcha() { Description = "말차"; }
+    public matcha() { Description = "matcha"; }
 }

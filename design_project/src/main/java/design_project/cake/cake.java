@@ -42,7 +42,7 @@ public class cake {
     }
 
     public String toString() {
-        return this.name + '\n'; //토핑 + 과일 + 잼 + 시트 + 케이크 = 초콜릿 딸기 체리 생크림케이크
+        return this.name + '\n';
     }
 
     public void orderCheck() {
