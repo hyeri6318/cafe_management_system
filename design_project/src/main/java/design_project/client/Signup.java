@@ -5,6 +5,7 @@
  */
 package design_project.client;
 
+import design_project.FileSystem.CreateFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,24 +23,20 @@ import java.util.Scanner;
  * @author 이혜리
  */
 public class Signup {
-    String URL = null;
+    String url = CreateFile.URL + "\\client.txt";
 
     private String id = null;
     private String ps = null;
     private String name = null;
-
-    public Signup(String URL) {
-        this.URL = URL;
-    }
 
     public boolean CompareID(String url) {
         try {
             String str;
             String[] array = null;
 
-            BufferedReader is = new BufferedReader(new FileReader(URL));
+            BufferedReader is = new BufferedReader(new FileReader(url));
 
-            Path path = Paths.get(URL);
+            Path path = Paths.get(url);
 
             Charset cs = StandardCharsets.UTF_8;
 
@@ -92,10 +89,10 @@ public class Signup {
             String s = "/";
             String n = "\n";
 
-            boolean id_temp = CompareID(URL);
+            boolean id_temp = CompareID(url);
 
             if (id_temp) {
-                File file = new File(URL);
+                File file = new File(url);
                 FileWriter writer;
                 writer = new FileWriter(file, true);
                 writer.write(name);

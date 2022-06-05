@@ -23,7 +23,7 @@ import java.util.Scanner;
 public class CakeorderDisplay_1 implements Observer, DisplayElement {
 
     String ID = null;
-    String URL = CreateFile.URL + "\\order.txt";
+    String url = CreateFile.URL + "\\order.txt";
 
     private int production;
     private int time;
@@ -60,9 +60,9 @@ public class CakeorderDisplay_1 implements Observer, DisplayElement {
             String str;
             String[] array = null;
 
-            BufferedReader is = new BufferedReader(new FileReader(URL));
+            BufferedReader is = new BufferedReader(new FileReader(url));
 
-            Path path = Paths.get(URL);
+            Path path = Paths.get(url);
 
             Charset cs = StandardCharsets.UTF_8;
 
@@ -101,9 +101,9 @@ public class CakeorderDisplay_1 implements Observer, DisplayElement {
                 String str;
                 String[] array = null;
 
-                BufferedReader is = new BufferedReader(new FileReader(URL));
+                BufferedReader is = new BufferedReader(new FileReader(url));
 
-                Path path = Paths.get(URL);
+                Path path = Paths.get(url);
 
                 Charset cs = StandardCharsets.UTF_8;
 

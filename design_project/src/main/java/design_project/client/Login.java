@@ -5,6 +5,7 @@
  */
 package design_project.client;
 
+import design_project.FileSystem.CreateFile;
 import design_project.beverage.beverage;
 import design_project.cake.cake;
 import design_project.md.MD;
@@ -26,7 +27,7 @@ import java.util.Scanner;
  */
 public class Login {
 
-    String URL = null;
+    String url = CreateFile.URL + "\\client.txt";
 
     String ID = null;
     String PW = null;
@@ -50,10 +51,6 @@ public class Login {
     beverage b = new beverage() {};
 
     cake c = new cake();
-
-    public Login(String URL) {
-        this.URL = URL;
-    }
 
     public void DoLogin() {
         Scanner sc = new Scanner(System.in);
@@ -82,9 +79,9 @@ public class Login {
             String str;
             String[] array = null;
 
-            BufferedReader is = new BufferedReader(new FileReader(URL));
+            BufferedReader is = new BufferedReader(new FileReader(url));
 
-            Path path = Paths.get(URL);
+            Path path = Paths.get(url);
 
             Charset cs = StandardCharsets.UTF_8;
 
@@ -120,7 +117,7 @@ public class Login {
 
     public void LoginCheck() {
 
-        boolean id_temp = Compare(URL);
+        boolean id_temp = Compare(url);
 
         if (id_temp) {
             System.out.print("로그인 성공\n\n");

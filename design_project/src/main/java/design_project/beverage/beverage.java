@@ -20,14 +20,14 @@ import java.util.Scanner;
 public abstract class beverage {
 
     public String Description = "beverage";
-    public String cost="\\";
-    String URL = CreateFile.URL + "\\order.txt";
+    public String cost = "\\";
+    String url = CreateFile.URL + "\\order.txt";
 
     public String getDescription() {
         return Description;
     }
-    
-    public String getcostDescriptoin(){
+
+    public String getcostDescriptoin() {
         return cost;
     }
 
@@ -196,7 +196,7 @@ public abstract class beverage {
             String s = "/";
             String n = "\n";
 
-            File file = new File(URL);
+            File file = new File(url);
             FileWriter writer;
 
             Charset cs = StandardCharsets.UTF_8;
@@ -204,7 +204,7 @@ public abstract class beverage {
             writer = new FileWriter(file, true);
             writer.write("beverage");
             writer.write(s);
-            
+
             if (Login.id == null) {
                 writer.write("");
             } else {
@@ -216,7 +216,7 @@ public abstract class beverage {
             } else {
                 writer.write(Login.nid);
             }
-            
+
             writer.write(s);
             writer.write(Description);
             writer.write(n);

@@ -5,6 +5,7 @@
  */
 package design_project.client;
 
+import design_project.FileSystem.CreateFile;
 import java.util.Scanner;
 
 /**
@@ -13,17 +14,11 @@ import java.util.Scanner;
  */
 public class First {
 
-    String URL = null;
-
-    public First(String URL) {
-        this.URL = URL + "\\client.txt";
-    }
-
     public void Show() {
-        Signup s = new Signup(URL);
-        Login l = new Login(URL);
-        changePW c = new changePW(URL);
-        removeClient r = new removeClient(URL);
+        Signup s = new Signup();
+        Login l = new Login();
+        changePW c = new changePW();
+        removeClient r = new removeClient();
 
         while (true) {
             System.out.println("------- 환엽합니다 -----------");

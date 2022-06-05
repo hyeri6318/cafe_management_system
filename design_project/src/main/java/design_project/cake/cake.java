@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class cake {
 
-    String URL = CreateFile.URL + "\\order.txt";
+    String url = CreateFile.URL + "\\order.txt";
 
     Scanner sc = new Scanner(System.in);
     int response = 0;
@@ -144,7 +144,7 @@ public class cake {
             String s = "/";
             String n = "\n";
 
-            File file = new File(URL);
+            File file = new File(url);
             FileWriter writer;
 
             Charset cs = StandardCharsets.UTF_8;

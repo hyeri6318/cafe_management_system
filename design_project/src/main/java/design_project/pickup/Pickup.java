@@ -24,7 +24,7 @@ import java.util.Scanner;
  */
 public class Pickup {
 
-    String URL = CreateFile.URL + "\\order.txt";
+    String url = CreateFile.URL + "\\order.txt";
     String ID = null;
 
     public void show() {
@@ -42,9 +42,9 @@ public class Pickup {
             String str;
             String[] array = null;
 
-            BufferedReader is = new BufferedReader(new FileReader(URL));
+            BufferedReader is = new BufferedReader(new FileReader(url));
 
-            Path path = Paths.get(URL);
+            Path path = Paths.get(url);
 
             Charset cs = StandardCharsets.UTF_8;
 
@@ -81,7 +81,7 @@ public class Pickup {
             int end = -1; //0은 정상 삭제. -1은 정보가 없는경우
 
             if (ch == 0) {
-                File file = new File(URL);
+                File file = new File(url);
                 FileWriter writer;
                 writer = new FileWriter(file, false);
 

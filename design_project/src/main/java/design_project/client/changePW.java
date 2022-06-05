@@ -5,6 +5,7 @@
  */
 package design_project.client;
 
+import design_project.FileSystem.CreateFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -23,7 +24,7 @@ import java.util.Scanner;
  */
 public class changePW {
 
-    String URL = null;
+    String url = CreateFile.URL + "\\client.txt";
 
     String Name = null;
     String ID = null;
@@ -33,10 +34,6 @@ public class changePW {
     ArrayList<String> name_list = new ArrayList<String>();
     ArrayList<String> id_list = new ArrayList<String>();
     ArrayList<String> pw_list = new ArrayList<String>();
-
-    public changePW(String URL) {
-        this.URL = URL;
-    }
 
     public void doChangePW() {
         Scanner sc = new Scanner(System.in);
@@ -66,7 +63,7 @@ public class changePW {
 
     public void rewrite() {   //변경하고 메모장에 다시 저장
         try {
-            File file = new File(URL);
+            File file = new File(url);
 
             FileWriter writer;
 
@@ -100,9 +97,9 @@ public class changePW {
             String str;
             String[] array = null;
 
-            BufferedReader is = new BufferedReader(new FileReader(URL));
+            BufferedReader is = new BufferedReader(new FileReader(url));
 
-            Path path = Paths.get(URL);
+            Path path = Paths.get(url);
 
             Charset cs = StandardCharsets.UTF_8;
 

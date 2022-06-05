@@ -1,2 +1,4 @@
-beverage//0shot 0syrup beverage
-beverage/G/0shot 0syrup beverage
+beverage/soft/æ∆¿ÃΩ∫ 1º¶ Ω√∑¥0∆ﬂ«¡ beverage
+beverage/soft/0º¶ Ω√∑¥1∆ﬂ«¡ æ∆¿ÃΩ∫ 1º¶ Ω√∑¥0∆ﬂ«¡ beverage
+cake/soft/whipped apple jam cake
+MD/soft/tumbler, message : Happy Birth Day, delivery packing, 40000\ 
