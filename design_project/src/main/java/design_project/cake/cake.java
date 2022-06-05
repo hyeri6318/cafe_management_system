@@ -71,19 +71,19 @@ public class cake {
             if (response == 1) {
                 System.out.println("생크림 케이크를 주문합니다.");
                 whippedCakeStore createCake = new whippedCakeStore();
-                sheetName = "생크림 ";
+                sheetName = "whipped ";
                 selectJam();
                 break;
             } else if (response == 2) {
                 System.out.println("쉬폰 케이크를 주문합니다.");
                 chiffonCakeStore createCake = new chiffonCakeStore();
-                sheetName = "쉬폰 ";
+                sheetName = "chiffon ";
                 selectJam();
                 break;
             } else if (response == 3) {
                 System.out.println("치즈 케이크를 주문합니다.");
                 cheeseCakeStore cheeseCake = new cheeseCakeStore();
-                sheetName = "치즈 ";
+                sheetName = "cheese ";
                 selectJam();
                 break;
             } else {
@@ -99,21 +99,18 @@ public class cake {
             response = sc.nextInt();
             if (response == 1) {
                 System.out.println("사과 잼을 선택하셨습니다.");
-                jamName = "사과 ";
-                cakeFinal = sheetName + jamName + "케이크";
-                System.out.println(cakeFinal);
+                jamName = "apple jam ";
+                cakeFinal = sheetName + jamName + "cake";
                 break;
             } else if (response == 2) {
                 System.out.println("블루베리 잼을 선택하셨습니다.");
-                jamName = "블루베리 ";
-                cakeFinal = sheetName + jamName + "케이크";
-                System.out.println(cakeFinal);
+                jamName = "blueberry jam ";
+                cakeFinal = sheetName + jamName + "cake";
                 break;
             } else if (response == 3) {
                 System.out.println("체리 잼을 선택하셨습니다.");
-                jamName = "체리  ";
-                cakeFinal = sheetName + jamName + "케이크";
-                System.out.println(cakeFinal + "주문 완료");
+                jamName = "cherry jam  ";
+                cakeFinal = sheetName + jamName + "cake";
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
