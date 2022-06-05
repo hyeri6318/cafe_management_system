@@ -1,8 +1,0 @@
-beverage/lhl/아이스 1샷 시럽0펌프 아메리카노 
-beverage/lhl/0샷 시럽0펌프 라떼 
-cake/lhl/생크림 블루베리 케이크
-MD/lhl/컵, 메시지 : 생일축하합니다, 10000원 
-beverage/6/0샷 시럽0펌프 키위 스무디 
-beverage/6/0샷 시럽0펌프 바닐라 프라푸치노 
-beverage/6/0샷 시럽0펌프 말차 
-cake/6/치즈 블루베리 케이크

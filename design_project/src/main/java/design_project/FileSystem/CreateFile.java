@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class CreateFile {
 
-    public static String URL = "C:\\git\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
+    public static String URL = "C:\\github_oyune\\cafe_management_system\\design_project\\src\\main\\java\\design_project\\info";
 
     public void Create() {
         //Scanner sc = new Scanner(System.in);
