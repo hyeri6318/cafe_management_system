@@ -41,7 +41,7 @@ public class First {
                     l.DoLogin();
                     return;
                 case 2:
-                    System.out.println("비회원");
+                    l.non_member();
                     return;
 
                 case 3:

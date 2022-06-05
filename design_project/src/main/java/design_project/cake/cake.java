@@ -155,7 +155,19 @@ public class cake {
             writer = new FileWriter(file, true);
             writer.write("cake");
             writer.write(s);
-            writer.write(Login.id);
+
+            if (Login.id == null) {
+                writer.write("");
+            } else {
+                writer.write(Login.id);
+            }
+
+            if (Login.nid == 0) {
+                writer.write("");
+            } else {
+                writer.write(Login.nid);
+            }
+
             writer.write(s);
             writer.write(cakeFinal);
             writer.write(n);

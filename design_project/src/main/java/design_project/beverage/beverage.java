@@ -194,7 +194,19 @@ public abstract class beverage {
             writer = new FileWriter(file, true);
             writer.write("beverage");
             writer.write(s);
-            writer.write(Login.id);
+
+            if (Login.id == null) {
+                writer.write("");
+            } else {
+                writer.write(Login.id);
+            }
+
+            if (Login.nid == 0) {
+                writer.write("");
+            } else {
+                writer.write(Login.nid);
+            }
+
             writer.write(s);
             writer.write(Description);
             writer.write(n);

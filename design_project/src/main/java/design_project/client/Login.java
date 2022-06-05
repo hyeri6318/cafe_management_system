@@ -17,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -30,7 +31,8 @@ public class Login {
     String ID = null;
     String PW = null;
 
-    public static String id = null;
+    public static String id = null; // 회원 아이디
+    public static int nid = 0; // 비회원 아이디
 
     nutrition_main n = new nutrition_main();
     MD m = new MD() {
@@ -44,14 +46,14 @@ public class Login {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
-    
+
     beverage b = new beverage() {
         @Override
         public int cost() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
-    
+
     cake c = new cake();
 
     public Login(String URL) {
@@ -63,13 +65,21 @@ public class Login {
 
         System.out.println("아이디 : ");
         ID = sc.nextLine();
-        id=ID;
-        
+        id = ID;
+
         System.out.println("비밀번호 : ");
         PW = sc.nextLine();
 
         LoginCheck();
 
+    }
+
+    public void non_member() {  // 비회원일 경우 숫자로 랜덤 아이디 부여
+        Random random = new Random();
+        nid = random.nextInt(100);
+
+        System.out.println(nid);
+        show();
     }
 
     public boolean Compare(String url) {
@@ -118,16 +128,19 @@ public class Login {
         boolean id_temp = Compare(URL);
 
         if (id_temp) {
-            System.out.println("로그인 성공\n");
-            System.out.println("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
-            n.nutrition();
-            b.orderCheck();
-            c.orderCheck();
-            m.buy();
+            System.out.print("로그인 성공\n\n");
+            show();
         } else {
-            System.out.println("로그인 실패\n");
+            System.out.print("로그인 실패\n");
             DoLogin();
         }
+    }
 
+    public void show() {
+        System.out.print("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
+        n.nutrition();
+        b.orderCheck();
+        c.orderCheck();
+        m.buy();
     }
 }

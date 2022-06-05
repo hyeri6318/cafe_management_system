@@ -234,7 +234,19 @@ public abstract class MD {
             writer = new FileWriter(file, true);
             writer.write("MD");
             writer.write(s);
-            writer.write(Login.id);
+
+            if (Login.id == null) {
+                writer.write("");
+            } else {
+                writer.write(Login.id);
+            }
+
+            if (Login.nid == 0) {
+                writer.write("");
+            } else {
+                writer.write(Login.nid);
+            }
+
             writer.write(s);
             writer.write(md_result);
             writer.write(n);
