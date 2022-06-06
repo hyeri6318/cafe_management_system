@@ -19,21 +19,40 @@ import java.util.Scanner;
  */
 public abstract class beverage {
 
-    public String Description = "beverage";
-    public String cost = "\\";
-    String url = CreateFile.URL + "\\order.txt";
+    String URL = CreateFile.URL + "\\order.txt";
+    String Description = "";
+    int cost = 0;
+    int bevTime = 0;
+    public String coffeeDescription = "";
+    public String toppingDescription = "";
+    public int toppingNumDescription = 0;
+    public int costDescription = 0;
+    public int timeDescription = 0;
 
-    public String getDescription() {
-        return Description;
+    public String getcoffeeDescription() {
+        return coffeeDescription;
     }
 
-    public String getcostDescriptoin() {
-        return cost;
+    public String gettoppingDescription() {
+        return toppingDescription;
+    }
+
+    public int gettoppingNumDescription() {
+        return toppingNumDescription;
+    }
+
+    public int getcostDescription() {
+        return costDescription;
+    }
+
+    public int gettimeDescription() {
+        return timeDescription;
     }
 
     Scanner sc = new Scanner(System.in);
     int response = 0;
 
+    //음료 주문 여부를 확인하는 메소드, 주문하지 않을 시 케이크 주문으로 바로 이동
     public void orderCheck() {
         boolean question1 = true;
         while (question1) {
@@ -52,6 +71,7 @@ public abstract class beverage {
         }
     }
 
+    //주문할 음료 종류를 확인하는 메소드, 선택 후 토핑 추가로 이동
     public void selectbeverage() {
         boolean question2 = true;
         while (question2) {
@@ -60,15 +80,14 @@ public abstract class beverage {
             if (response == 1) {
                 System.out.println("아메리카노를 주문합니다.");
                 beverage americano = new americano();
-                americano.getDescription();
-                //Description = "아메리카노 ";
+                coffeeDescription=americano.getcoffeeDescription();
+                System.out.println(coffeeDescription);
                 selectTopping();
                 break;
             } else if (response == 2) {
                 System.out.println("라떼를 주문합니다.");
                 beverage latte = new latte();
-                latte.getDescription();
-                //Description = "라떼 ";
+                coffeeDescription = latte.getcoffeeDescription();
                 selectTopping();
                 break;
             } else if (response == 3) {
@@ -77,16 +96,14 @@ public abstract class beverage {
                 response = sc.nextInt();
                 if (response == 1) {
                     System.out.println("초콜릿 프라푸치노를 주문합니다.");
-                    beverage chocolateFrappuccino = new chocolateFrappuccino();
-                    chocolateFrappuccino.getDescription();
-                    //Description = "초콜릿 프라푸치노 ";
+                    chocolateFrappuccino chocolateFrappuccino = new chocolateFrappuccino();
+                    coffeeDescription = chocolateFrappuccino.getcoffeeDescription();
                     selectTopping();
                     break;
                 } else if (response == 2) {
                     System.out.println("바닐라 프라푸치노를 주문합니다.");
-                    beverage vanillaFrappuccino = new vanillaFrappuccino();
-                    vanillaFrappuccino.getDescription();
-                    //Description = "바닐라 프라푸치노 ";
+                    vanillaFrappuccino vanillaFrappuccino = new vanillaFrappuccino();
+                    coffeeDescription = vanillaFrappuccino.getcoffeeDescription();
                     selectTopping();
                     break;
                 }
@@ -95,34 +112,30 @@ public abstract class beverage {
                 response = sc.nextInt();
                 if (response == 1) {
                     System.out.println("딸기 스무디를 주문합니다.");
-                    beverage strawberrySmoothie = new strawberrySmoothie();
-                    strawberrySmoothie.getDescription();
-                    //Description = "딸기 스무디 ";
+                    strawberrySmoothie strawberrySmoothie = new strawberrySmoothie();
+                    coffeeDescription = strawberrySmoothie.getcoffeeDescription();
                     selectTopping();
                     break;
                 } else if (response == 2) {
                     System.out.println("키위 스무디를 주문합니다.");
-                    beverage kiwiSmoothie = new kiwiSmoothie();
-                    kiwiSmoothie.getDescription();
-                    //Description = "키위 스무디 ";
+                    kiwiSmoothie kiwiSmoothie = new kiwiSmoothie();
+                    coffeeDescription = kiwiSmoothie.getcoffeeDescription();
                     selectTopping();
                     break;
                 }
             } else if (response == 5) {
-                System.out.println("차 종류를 선택하세요.\n1.녹차 2.말차");
+                System.out.println("차 종류를 선택하세요.\n1.홍차 2.말차");
                 response = sc.nextInt();
                 if (response == 1) {
                     System.out.println("홍차를 주문합니다.");
-                    beverage blacktea = new blacktea();
-                    blacktea.getDescription();
-                    //Description = "홍차 ";
+                    blacktea blacktea = new blacktea();
+                    coffeeDescription = blacktea.getcoffeeDescription();
                     selectTopping();
                     break;
                 } else if (response == 2) {
                     System.out.println("말차를 주문합니다.");
-                    beverage matcha = new matcha();
-                    matcha.getDescription();
-                    //Description = "말차 ";
+                    matcha matcha = new matcha();
+                    coffeeDescription = matcha.getcoffeeDescription();
                     selectTopping();
                     break;
                 } else {
@@ -134,37 +147,67 @@ public abstract class beverage {
 
     public void selectTopping() {
         boolean question3 = true;
-        String ice = "", whip = "";
-        int shot = 0, syrup = 0;
+        String toppingIce = "", toppingWhip = "";
+        int shotNum=0, syrupNum=0;
         while (question3) {
             System.out.println("토핑을 선택하세요.\n1.얼음 2.샷 3.휘핑 4.시럽 5.추가 안 함");
             response = sc.nextInt();
             if (response == 1) {
-                if (ice.equals("")) {
+                if (toppingIce.equals("")) {
                     System.out.println("아이스로 주문합니다.");
-                    ice = "아이스 ";
-                } else if (ice.equals("아이스 ")) {
-                    System.out.println("이미 선택한 옵션입니다..");
+                    ice ice = new ice();
+                    toppingIce = ice.gettoppingDescription();
+                    cost += ice.getcostDescription();
+                    bevTime += ice.gettimeDescription();
+                    toppingIce = "iced";
+                } else {
+                    System.out.println("이미 선택한 옵션입니다.");
                 }
             } else if (response == 2) {
-                System.out.println("샷을 추가합니다.");
-                shot++;
-            } else if (response == 3) {
-                if (ice.equals("")) {
-                    System.out.println("휘핑을 추가합니다.");
-                    whip = "휘핑 ";
-                } else if (whip.equals("휘핑 ")) {
-                    System.out.println("이미 선택한 옵션입니다..");
+                if (shotNum == 0) {
+                    System.out.println("샷을 추가합니다.");
+                    shot shot = new shot();
+                    toppingDescription += shot.gettoppingDescription();
+                    shotNum += shot.gettoppingNumDescription();
+                    cost += shot.getcostDescription();
+                    bevTime += shot.gettimeDescription();
+                } else {
+                    System.out.println("샷을 추가합니다.");
+                    shot shot = new shot();
+                    shotNum += shot.gettoppingNumDescription();
+                    cost += shot.getcostDescription();
+                    bevTime += shot.gettimeDescription();
                 }
-            } else if (response == 4) {
-                System.out.println("시럽을 추가합니다.");
-                syrup++;
-            } else if (response == 5) {
+            }else if(response ==3){
+                if (toppingWhip.equals("")) {
+                    whip whip = new whip();
+                    toppingWhip = whip.gettoppingDescription();
+                    cost += whip.getcostDescription();
+                    bevTime += whip.gettimeDescription();
+                    toppingWhip = "whip";
+                } else if (toppingWhip.equals("whip")) {
+                    System.out.println("이미 선택한 옵션입니다.");
+                }
+            }else if(response == 4){
+                if (syrupNum == 0) {
+                    System.out.println("시럽을 추가합니다.");
+                    syrup syrup = new syrup();
+                    toppingDescription += syrup.gettoppingDescription();
+                    syrupNum = syrup.toppingNumDescription;
+                    cost += syrup.getcostDescription();
+                    bevTime += syrup.gettimeDescription();
+                } else {
+                    System.out.println("시럽을 추가합니다.");
+                    syrup syrup = new syrup();
+                    syrupNum = syrup.toppingNumDescription; //토핑 수 추가
+                    cost += syrup.costDescription; //가격 추가
+                    bevTime += syrup.timeDescription; //시간 추가
+                }
+            } else if(response ==5){
                 System.out.println("토핑 추가를 종료합니다.");
-                Description = ice + shot + "샷 시럽" + syrup + "펌프 " + Description;
-                System.out.println(Description);
+                Description = toppingIce + " " + shotNum + "shot " + syrupNum + "syrup " + toppingWhip + " " + coffeeDescription;
                 break;
-            } else {
+            }else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
@@ -172,11 +215,12 @@ public abstract class beverage {
         beverage_last();
     }
 
+    //음료 추가 주문 여부 확인
     public void beverage_last() {
         boolean question4 = true;
 
         while (question4) {
-            System.out.println("음료를 더 주문하시겠습니까?\n 1.예 2.아니오");
+            System.out.println("음료를 더 주문하시겠습니까?\n1.예 2.아니오");
             response = sc.nextInt();
 
             if (response == 1) {
@@ -196,7 +240,7 @@ public abstract class beverage {
             String s = "/";
             String n = "\n";
 
-            File file = new File(url);
+            File file = new File(URL);
             FileWriter writer;
 
             Charset cs = StandardCharsets.UTF_8;

@@ -10,8 +10,9 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class chocolateFrappuccino extends beverage {
-    public chocolateFrappuccino() { 
-        Description = "초콜릿 프라푸치노"; 
-        cost="4000";
+    public chocolateFrappuccino() {
+    coffeeDescription = "chocolate frappuccino";
+    costDescription = 4000;
+    timeDescription = 10;
     }
 }

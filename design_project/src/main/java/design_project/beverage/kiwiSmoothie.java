@@ -10,8 +10,9 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class kiwiSmoothie extends beverage {
-    public kiwiSmoothie() { 
-        Description = "키위 스무디"; 
-        cost="4000";
+    public kiwiSmoothie() {
+        coffeeDescription = "kiwi smoothie";
+        costDescription = 4000;
+        timeDescription = 10;
     }
 }
