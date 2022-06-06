@@ -10,8 +10,16 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class ice extends extra {
-    public String getDescription(){ return "얼음 추가"; }
-    public String getcostDescription() {
-       return "500";
+    public String gettoppingDescription(){
+        return "iced";
+    }
+    public int gettoppingNumDescription(){
+        return 0;
+    }
+    public int getcostDescription(){
+        return 500;
+    }
+    public int gettimeDescription(){
+        return 1;
     }
 }

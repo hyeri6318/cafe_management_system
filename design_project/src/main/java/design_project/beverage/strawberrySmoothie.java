@@ -10,8 +10,9 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class strawberrySmoothie extends beverage {
-    public strawberrySmoothie() { 
-        Description = "딸기 스무디"; 
-        cost="4500";
+    public strawberrySmoothie() {
+        coffeeDescription = "strawberry smoothie";
+        costDescription = 4000;
+        timeDescription = 15;
     }
 }

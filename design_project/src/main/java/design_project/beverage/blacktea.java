@@ -11,7 +11,8 @@ package design_project.beverage;
  */
 public class blacktea extends beverage {
     public blacktea() {
-        Description = "홍차"; 
-        cost="4500";
+        coffeeDescription = "black tea";
+        costDescription = 4000;
+        timeDescription = 15;
     }
 }

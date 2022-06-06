@@ -10,8 +10,9 @@ package design_project.beverage;
  * @author 윤채민
  */
 public class vanillaFrappuccino extends beverage {
-    public vanillaFrappuccino() { 
-        Description = "바닐라 프라푸치노"; 
-        cost="4000";
+    public vanillaFrappuccino() {
+        coffeeDescription = "vanilla frappuccino";
+        costDescription = 4000;
+        timeDescription = 15;
     }
 }

@@ -10,6 +10,8 @@ package design_project.beverage;
  * @author 윤채민
  */
 public abstract class extra extends beverage {
-    public abstract String getDescription();
-    public abstract String getcostDescription();
+    public abstract String gettoppingDescription();
+    public abstract int gettoppingNumDescription();
+    public abstract int getcostDescription();
+    public abstract int gettimeDescription();
 }
