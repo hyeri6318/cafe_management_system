@@ -81,7 +81,6 @@ public abstract class beverage {
                 System.out.println("아메리카노를 주문합니다.");
                 beverage americano = new americano();
                 coffeeDescription=americano.getcoffeeDescription();
-                System.out.println(coffeeDescription);
                 selectTopping();
                 break;
             } else if (response == 2) {
@@ -159,7 +158,7 @@ public abstract class beverage {
                     toppingIce = ice.gettoppingDescription();
                     cost += ice.getcostDescription();
                     bevTime += ice.gettimeDescription();
-                    toppingIce = "iced";
+                    toppingIce = "iced ";
                 } else {
                     System.out.println("이미 선택한 옵션입니다.");
                 }
@@ -193,19 +192,21 @@ public abstract class beverage {
                     System.out.println("시럽을 추가합니다.");
                     syrup syrup = new syrup();
                     toppingDescription += syrup.gettoppingDescription();
-                    syrupNum = syrup.toppingNumDescription;
+                    syrupNum += syrup.gettoppingNumDescription();
                     cost += syrup.getcostDescription();
                     bevTime += syrup.gettimeDescription();
                 } else {
                     System.out.println("시럽을 추가합니다.");
                     syrup syrup = new syrup();
-                    syrupNum = syrup.toppingNumDescription; //토핑 수 추가
-                    cost += syrup.costDescription; //가격 추가
-                    bevTime += syrup.timeDescription; //시간 추가
+                    syrupNum += syrup.gettoppingNumDescription();
+                    cost += syrup.getcostDescription();
+                    bevTime += syrup.gettimeDescription();
                 }
             } else if(response ==5){
                 System.out.println("토핑 추가를 종료합니다.");
-                Description = toppingIce + " " + shotNum + "shot " + syrupNum + "syrup " + toppingWhip + " " + coffeeDescription;
+                Description = toppingIce + shotNum + "shot " + toppingWhip + syrupNum + "syrup " + coffeeDescription + "/" + cost + "\\" + "/" + bevTime + "min";
+                System.out.println("문장 출력 확인용");
+                System.out.println(Description);
                 break;
             }else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");

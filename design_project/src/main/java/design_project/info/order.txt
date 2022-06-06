@@ -1,0 +1,13 @@
+beverage/`/iced 2shot 0syrup whip latte/4000/8
+beverage/V/ 1shot 0syrup whip americano/1500\/3min
+beverage/B/iced 2shot  0syrup americano/2000\/4min
+beverage/(/iced 2shot whip0syrup americano/2500\/5min
+beverage/Y/iced 1shot  0syrup latte/2000\/4min
+beverage/M/iced 1shot  0syrup americano/2000\/4min
+beverage/&/iced 1shot  0syrup americano/2000\/4min
+beverage/c/iced 1shot whip 0syrup americano/2500\/5min
+beverage//iced 1shot  0syrup americano/2000\/4min
+beverage/T/iced1shot 0syrup americano/2000\/4min
+beverage/#/iced 1shot 0syrup americano/2000\/4min
+beverage/G/0shot 0syrup americano/0\/0min
+beverage/9/iced 1shot 2syrup americano/2000\/4min

@@ -11,7 +11,7 @@ package design_project.beverage;
  */
 public class whip extends extra {
     public String gettoppingDescription(){
-        return "whip";
+        return "whip ";
     }
     public int gettoppingNumDescription(){
         return 0;

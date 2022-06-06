@@ -11,7 +11,7 @@ package design_project.beverage;
  */
 public class ice extends extra {
     public String gettoppingDescription(){
-        return "iced";
+        return "iced ";
     }
     public int gettoppingNumDescription(){
         return 0;
