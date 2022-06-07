@@ -9,15 +9,15 @@ public class cheeseCakeStore extends cakeStore {
         cake cake = null;
         cakeIngredientFactory factory = new cheeseIngredientFactory();
 
-        if(item.equals("사과")){
-            cake = new appleCake((cheeseIngredientFactory) factory);
-            cake.setName("사과 치즈케이크");
-        }else if(item.equals("블루베리")){
-            cake = new blueberryCake((cheeseIngredientFactory) factory);
-            cake.setName("블루베리 치즈케이크");
-        }else if(item.equals("체리")){
-            cake = new cherryCake((cheeseIngredientFactory) factory);
-            cake.setName("체리 치즈케이크");
+        if (item.equals("사과")) {
+            cake = new appleCake((cakeIngredientFactory) factory);
+            cake.setName("Apple Cheese Cake");
+        } else if (item.equals("블루베리")) {
+            cake = new blueberryCake((cakeIngredientFactory) factory);
+            cake.setName("Blueberry Cheese Cake");
+        } else if (item.equals("체리")) {
+            cake = new cherryCake((cakeIngredientFactory) factory);
+            cake.setName("Cherry Cheese Cake");
         }
         return cake;
     }

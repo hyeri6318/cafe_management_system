@@ -12,3 +12,4 @@ beverage/#/iced 1shot 0syrup americano/2000\/4min
 beverage/G/0shot 0syrup americano/0\/0min
 beverage/9/iced 1shot 2syrup americano/2000\/4min
 beverage/b/iced 1shot 2syrup americano/4000\/9min
+cake/lhl/Cherry Whipped Cake ,(fruit : strawberry , topping : chocolate)

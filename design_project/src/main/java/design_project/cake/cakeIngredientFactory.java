@@ -9,7 +9,7 @@ package design_project.cake;
  *
  * @author 윤채민
  */
-public interface cakeIngredientFactory {
-  topping createTopping() ;
-  fruit createFruit() ;
+interface cakeIngredientFactory {
+    fruit createFruit();
+    topping createTopping();
 }

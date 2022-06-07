@@ -10,11 +10,12 @@ package design_project.cake;
  * @author 윤채민
  */
 public class chiffonIngredientFactory implements cakeIngredientFactory {
-  public topping createTopping() {
-      return new icecream();
-  }
 
-  public fruit createFruit() {
-      return new grape();
-  }
+    public fruit createFruit() {
+        return new grape();
+    }
+
+    public topping createTopping() {
+        return new icecream();
+    }
 }

@@ -20,17 +20,20 @@ public class cake {
 
     String url = CreateFile.URL + "\\order.txt";
 
-    Scanner sc = new Scanner(System.in);
+    String name = "";
     int response = 0;
-    String cakeFinal = null;
-    protected String name;
+    String Description = "";
+
+    cake cake = null;
+    cakeStore sheet = null;
+
     protected fruit fruit;
     protected topping topping;
-    String sheetName = null;
-    String jamName = null;
+
+    Scanner sc = new Scanner(System.in);
 
     public void cook() {
-        System.out.println("요리");
+
     }
 
     public void setName(String name) {
@@ -41,10 +44,6 @@ public class cake {
         return name;
     }
 
-    public String toString() {
-        return this.name + '\n';
-    }
-
     public void orderCheck() {
         boolean question1 = true;
         while (question1) {
@@ -53,7 +52,8 @@ public class cake {
             if (response == 1) {
                 System.out.println("케이크를 주문합니다.");
                 selectSheet();
-                break;
+                //oncreate(cake);
+                break; //break랑 boolean false 구분하기
             } else if (response == 2) {
                 System.out.println("케이크를 주문하지 않습니다.");
                 question1 = false;
@@ -65,25 +65,27 @@ public class cake {
 
     public void selectSheet() {
         boolean question2 = true;
+
         while (question2) {
             System.out.println("시트를 선택해 주세요.\n1.생크림 2.쉬폰 3.치즈");
             response = sc.nextInt();
+
             if (response == 1) {
                 System.out.println("생크림 케이크를 주문합니다.");
-                whippedCakeStore createCake = new whippedCakeStore();
-                sheetName = "whipped ";
+                cakeStore whippedCakeStore = new whippedCakeStore();
+                sheet = whippedCakeStore;       // 클래스의 변수를 수정. this.cake에는 영향이 가지 않음
                 selectJam();
                 break;
             } else if (response == 2) {
                 System.out.println("쉬폰 케이크를 주문합니다.");
-                chiffonCakeStore createCake = new chiffonCakeStore();
-                sheetName = "chiffon ";
+                cakeStore chiffonCakeStore = new chiffonCakeStore();
+                sheet = chiffonCakeStore;
                 selectJam();
                 break;
             } else if (response == 3) {
                 System.out.println("치즈 케이크를 주문합니다.");
-                cheeseCakeStore cheeseCake = new cheeseCakeStore();
-                sheetName = "cheese ";
+                cakeStore cheeseCakeStore = new cheeseCakeStore();
+                sheet = cheeseCakeStore;
                 selectJam();
                 break;
             } else {
@@ -99,48 +101,29 @@ public class cake {
             response = sc.nextInt();
             if (response == 1) {
                 System.out.println("사과 잼을 선택하셨습니다.");
-                jamName = "apple jam ";
-                cakeFinal = sheetName + jamName + "cake";
+                cake = sheet.orderCake("사과");     // this.cake를 새로 생성된 케이크로 할당. this.cake가 변경됨
                 break;
             } else if (response == 2) {
                 System.out.println("블루베리 잼을 선택하셨습니다.");
-                jamName = "blueberry jam ";
-                cakeFinal = sheetName + jamName + "cake";
+                cake = sheet.orderCake("블루베리");
                 break;
             } else if (response == 3) {
                 System.out.println("체리 잼을 선택하셨습니다.");
-                jamName = "cherry jam  ";
-                cakeFinal = sheetName + jamName + "cake";
+                cake = sheet.orderCake("체리");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
+        this.cake.sheet = sheet;    // 이 코드가 없을 시, this.cake의 sheet와 cake는 null이기 때문에, nullPointerException이 날 수 있음.
+        this.cake.cake = cake;
         createFile();
-        cake_last();
-    }
-
-    public void cake_last() {
-        boolean question4 = true;
-
-        while (question4) {
-            System.out.println("케이크를 더 주문하시겠습니까?\n 1.예 2.아니오");
-            response = sc.nextInt();
-
-            if (response == 1) {
-                selectSheet();
-                break;
-            } else if (response == 2) {
-                System.out.println("케이크 주문 완료");
-                break;
-            } else {
-                System.out.println("잘못된 입력입니다.");
-            }
-        }
     }
 
     public void createFile() {
         try {
+            Description = cake.cake.getName() + cake.fruit.getName()+cake.topping.getName();   
+
             String s = "/";
             String n = "\n";
 
@@ -164,10 +147,11 @@ public class cake {
             } else {
                 writer.write(Login.nid);
             }
-
             writer.write(s);
-            writer.write(cakeFinal);
+            writer.write(Description);
             writer.write(n);
+
+            System.out.println("작성완료");
 
             writer.flush();
             writer.close();

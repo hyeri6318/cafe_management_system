@@ -10,7 +10,8 @@ package design_project.cake;
  * @author 윤채민
  */
 public class chocolate implements topping {
-  public chocolate() {
-      System.out.println("토핑: 초콜릿");
-  }
+    @Override
+    public String getName() {
+       return " , topping : chocolate)";
+    }
 }

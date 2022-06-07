@@ -10,14 +10,15 @@ package design_project.cake;
  * @author 윤채민
  */
 public class cherryCake extends cake {
-  private cakeIngredientFactory ingredientFactory;
-
-  public cherryCake(cakeIngredientFactory ingredientFactory) {
-      this.ingredientFactory = ingredientFactory;
-  }
-  
-  public void cook(){
-      this.fruit = ingredientFactory.createFruit();
-      this.topping = ingredientFactory.createTopping();
-  }
+    private cakeIngredientFactory ingredientFactory;
+    
+    public cherryCake(cakeIngredientFactory ingredientFactory){
+        this.ingredientFactory=ingredientFactory;
+    }
+    
+    public void cook(){
+        System.out.println(name);
+        this.fruit=ingredientFactory.createFruit();
+        this.topping=ingredientFactory.createTopping();
+    }
 }

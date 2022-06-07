@@ -11,11 +11,14 @@ package design_project.cake;
  */
 abstract class cakeStore {
     protected abstract cake createCake(String item);
-
-    public cake orderCake(String type) {
+    
+    public cake orderCake(String type){
         cake cake = null;
-        cake = createCake(type);
+        
+        cake=createCake(type);
+        
         cake.cook();
+        
         return cake;
     }
 }
