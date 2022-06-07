@@ -2,7 +2,7 @@ package design_project.cake;
 
 /**
  *
- * @author 윤채민
+ * @author 윤채민, 이혜리
  */
 public class whippedCakeStore extends cakeStore {
     protected cake createCake(String item) {

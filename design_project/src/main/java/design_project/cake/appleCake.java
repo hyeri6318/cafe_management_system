@@ -7,7 +7,7 @@ package design_project.cake;
 
 /**
  *
- * @author 윤채민
+ * @author 윤채민, 이혜리
  */
 public class appleCake extends cake {
     private cakeIngredientFactory ingredientFactory;

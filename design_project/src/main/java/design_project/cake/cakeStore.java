@@ -7,7 +7,7 @@ package design_project.cake;
 
 /**
  *
- * @author 윤채민
+ * @author 윤채민, 이혜리
  */
 abstract class cakeStore {
     protected abstract cake createCake(String item);

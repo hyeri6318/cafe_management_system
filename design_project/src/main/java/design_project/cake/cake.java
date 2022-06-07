@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author 윤채민
+ * @author 윤채민, 이혜리
  */
 public class cake {
 
@@ -118,11 +118,32 @@ public class cake {
         this.cake.sheet = sheet;    // 이 코드가 없을 시, this.cake의 sheet와 cake는 null이기 때문에, nullPointerException이 날 수 있음.
         this.cake.cake = cake;
         createFile();
+        cake_last();
+    }
+
+    //케이크 추가 주문 여부 확인
+    public void cake_last() {
+        boolean question4 = true;
+
+        while (question4) {
+            System.out.println("케이크를 더 주문하시겠습니까?\n1.예 2.아니오");
+            response = sc.nextInt();
+
+            if (response == 1) {
+                selectSheet();
+                break;
+            } else if (response == 2) {
+                System.out.println("케이크 주문 완료");
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다.");
+            }
+        }
     }
 
     public void createFile() {
         try {
-            Description = cake.cake.getName() + cake.fruit.getName()+cake.topping.getName();   
+            Description = cake.cake.getName() + cake.fruit.getName() + cake.topping.getName();
 
             String s = "/";
             String n = "\n";
