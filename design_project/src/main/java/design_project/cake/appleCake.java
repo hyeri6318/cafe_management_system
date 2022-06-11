@@ -16,6 +16,7 @@ public class appleCake extends cake {
         this.ingredientFactory = ingredientFactory;
     }
 
+    //과일, 토핑 추가
     public void cook() {
         this.fruit = ingredientFactory.createFruit();
         this.topping = ingredientFactory.createTopping();

@@ -150,6 +150,7 @@ public class cake {
         }
     }
 
+    //토핑, 과일, 잼, 이름 불러와 케이크 완성하기
     public void createFile() {
         Description = cake.cake.getName() + cake.fruit.getName() + cake.topping.getName();
         
@@ -157,6 +158,7 @@ public class cake {
         ConsoleObserver console = new ConsoleObserver(orderdata);
         FileObserver file = new FileObserver(orderdata);
 
+        //로그인 ID가 있을 경우와 없을 경우로 구분하여 옵저버로 ID값 전달
         if (Login.id == null) {
             String ID = Login.nid;
             orderdata.setMeasurements(type, ID, Description, cost, otime);

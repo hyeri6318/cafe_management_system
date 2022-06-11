@@ -1,5 +1,0 @@
-beverage/lhl/0shot whip0syrup chocolate frappuccino/4500/11
-cake/lhl/Blueberry Whipped Cake ,(fruit : strawberry , topping : chocolate)/35000/120
-MD/lhl/tumbler, message : I Love You, wrap : gift packing, /40000/0
-beverage/64/iced 0shot 0syrup americano/2500/6
-beverage/64/1shot 0syrup latte/3000/12

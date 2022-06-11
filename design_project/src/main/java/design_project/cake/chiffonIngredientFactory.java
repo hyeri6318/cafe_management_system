@@ -11,10 +11,12 @@ package design_project.cake;
  */
 public class chiffonIngredientFactory implements cakeIngredientFactory {
 
+    //쉬폰케이크 과일 추가
     public fruit createFruit() {
         return new grape();
     }
 
+    //쉬폰케이크 토핑 추가
     public topping createTopping() {
         return new icecream();
     }
