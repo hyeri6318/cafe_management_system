@@ -11,6 +11,6 @@ package design_project.md;
  */
 public class deliveryWrap implements wrapBehavior{
     public String wrap(){
-        return "delivery packing, ";
+        return "wrap : delivery packing, ";
     }
 }

@@ -11,6 +11,6 @@ package design_project.md;
  */
 public class giftWrap implements wrapBehavior{
     public String wrap(){
-       return "gift packing, ";
+       return "wrap : gift packing, ";
     }
 }

@@ -151,6 +151,8 @@ public class cake {
     }
 
     public void createFile() {
+        Description = cake.cake.getName() + cake.fruit.getName() + cake.topping.getName();
+        
         OrderData orderdata = new OrderData();
         ConsoleObserver console = new ConsoleObserver(orderdata);
         FileObserver file = new FileObserver(orderdata);

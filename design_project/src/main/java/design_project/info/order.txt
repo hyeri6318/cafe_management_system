@@ -1,15 +1,3 @@
-beverage/`/iced 2shot 0syrup whip latte/4000/8
-beverage/V/ 1shot 0syrup whip americano/1500\/3min
-beverage/B/iced 2shot  0syrup americano/2000\/4min
-beverage/(/iced 2shot whip0syrup americano/2500\/5min
-beverage/Y/iced 1shot  0syrup latte/2000\/4min
-beverage/M/iced 1shot  0syrup americano/2000\/4min
-beverage/&/iced 1shot  0syrup americano/2000\/4min
-beverage/c/iced 1shot whip 0syrup americano/2500\/5min
-beverage//iced 1shot  0syrup americano/2000\/4min
-beverage/T/iced1shot 0syrup americano/2000\/4min
-beverage/#/iced 1shot 0syrup americano/2000\/4min
-beverage/G/0shot 0syrup americano/0\/0min
-beverage/9/iced 1shot 2syrup americano/2000\/4min
-beverage/b/iced 1shot 2syrup americano/4000\/9min
-cake/lhl/Cherry Whipped Cake ,(fruit : strawberry , topping : chocolate)
+beverage/lhl/0shot whip0syrup chocolate frappuccino/4500/11
+cake/lhl/Blueberry Whipped Cake ,(fruit : strawberry , topping : chocolate)/35000/120
+MD/lhl/tumbler, message : I Love You, wrap : gift packing, /40000/0

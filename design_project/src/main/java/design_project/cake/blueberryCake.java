@@ -17,7 +17,6 @@ public class blueberryCake extends cake {
     }
 
     public void cook() {
-        System.out.println(name);
         this.fruit = ingredientFactory.createFruit();
         this.topping = ingredientFactory.createTopping();
     }
