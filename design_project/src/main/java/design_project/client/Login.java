@@ -273,7 +273,7 @@ public class Login {
         director = new Director(nutritionBuilder);
         director.showNutrition();
         nutrition = director.getNutritoin();
-        System.out.println(nutrition);
+        System.out.println(nutrition+"\n");
         
         b.orderCheck();
         c.orderCheck();

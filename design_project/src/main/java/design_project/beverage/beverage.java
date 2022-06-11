@@ -270,5 +270,6 @@ public abstract class beverage {
             String ID = Login.id;
             orderdata.setMeasurements(type, ID, Description, cost, otime);
         }
+        cost=0;
     }
 }

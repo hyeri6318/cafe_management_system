@@ -30,8 +30,8 @@ public class Pickup {
     public void show() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("픽업");
-        System.out.println("아이디 입력");
+        System.out.println("-----------------------픽업----------------------");
+        System.out.println("픽업할 아이디 입력");
         ID = sc.nextLine();
 
         pickup_remove();
