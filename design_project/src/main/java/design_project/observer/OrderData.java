@@ -29,12 +29,6 @@ public class OrderData implements Subject {
         observers.add(observer);
     }
 
-    //옵저버 삭제
-    public void removeObserver(Observer observer) {
-        //배열에 들어간 내용 삭제하기
-        observers.remove(observer);
-    }
-
     //옵저버에 변경값 알림
     public void notifyObserver() {
         for (int i = 0; i < observers.size(); i++) {
