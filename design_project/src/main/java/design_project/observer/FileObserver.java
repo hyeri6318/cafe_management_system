@@ -30,6 +30,7 @@ public class FileObserver implements Observer{
         orderdata.registerObserver(this);
     }
     
+    //변경 내용 업데이트
     public void update(String type, String ID, String Description, int cost, int otime){
         this.type = type;
         this.ID=ID;

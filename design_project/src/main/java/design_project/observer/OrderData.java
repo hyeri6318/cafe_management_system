@@ -24,15 +24,18 @@ public class OrderData implements Subject {
         observers = new ArrayList();
     }
 
+    //옵저버 등록
     public void registerObserver(Observer observer) {
         observers.add(observer);
     }
 
+    //옵저버 삭제
     public void removeObserver(Observer observer) {
         //배열에 들어간 내용 삭제하기
         observers.remove(observer);
     }
 
+    //옵저버에 변경값 알림
     public void notifyObserver() {
         for (int i = 0; i < observers.size(); i++) {
             Observer observer = (Observer) observers.get(i);
@@ -40,6 +43,7 @@ public class OrderData implements Subject {
         }
     }
 
+    //입력받은 값 저장 및 알림 메소드 실행
     public void setMeasurements(String type, String ID, String Description, int cost, int otime) {
         this.type = type;
         this.ID = ID;
@@ -49,22 +53,27 @@ public class OrderData implements Subject {
         notifyObserver();
     }
 
+    //음료 저장 타입 불러오기
     public String gettype() {
         return type;
     }
 
+    //ID 불러오기
     public String getID() {
         return ID;
     }
 
+    //메뉴 이름 불러오기
     public String getDescription() {
         return Description;
     }
 
+    //가격 불러오기
     public int getcost() {
         return cost;
     }
 
+    //시간 불러오기
     public int otime() {
         return otime;
     }

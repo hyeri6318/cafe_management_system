@@ -15,12 +15,12 @@ public class ConsoleObserver implements Observer{
     public int otime;
     private Subject orderdata;
     
-    
     public ConsoleObserver(Subject orderdata){
-        this.orderdata = orderdata; //할 필요 없음, register가 하면 됨
+        this.orderdata = orderdata;
         orderdata.registerObserver(this);
     }
     
+    //입력된 값 불러오기
     public void update(String type, String ID, String Description, int cost, int otime){
         this.Description = Description;
         this.cost= cost;
@@ -28,6 +28,7 @@ public class ConsoleObserver implements Observer{
         display();
     }
 
+    //콘솔에 출력
     public void display(){
         System.out.println("메뉴: " + Description);
         System.out.println("가격: " + cost);
