@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  *
- * @author yooun
+ * @author 윤채민
  */
 public class File implements Observer{
     public String type;

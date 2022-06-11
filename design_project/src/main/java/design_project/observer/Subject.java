@@ -7,7 +7,7 @@ package design_project.observer;
 
 /**
  *
- * @author yooun
+ * @author 윤채민
  */
 public interface Subject {
     void registerObserver(Observer observer);

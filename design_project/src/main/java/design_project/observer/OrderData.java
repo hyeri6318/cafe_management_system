@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author yooun
+ * @author 윤채민
  */
 public class OrderData implements Subject {
 
