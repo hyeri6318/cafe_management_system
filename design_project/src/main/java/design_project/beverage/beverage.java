@@ -160,9 +160,9 @@ public abstract class beverage {
                     otime += matcha.gettimeDescription();
                     selectTopping();
                     break;
-                } else {
-                    System.out.println("잘못된 입력입니다. 다시 입력하세요.");
                 }
+            } else {
+                System.out.println("잘못된 입력입니다. 다시 입력하세요.");
             }
         }
     }
@@ -270,6 +270,6 @@ public abstract class beverage {
             String ID = Login.id;
             orderdata.setMeasurements(type, ID, Description, cost, otime);
         }
-        cost=0;
+        cost = 0;
     }
 }
