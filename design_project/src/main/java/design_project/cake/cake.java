@@ -2,6 +2,9 @@ package design_project.cake;
 
 import design_project.FileSystem.CreateFile;
 import design_project.client.Login;
+import design_project.observer.FileObserver;
+import design_project.observer.ConsoleObserver;
+import design_project.observer.OrderData;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,13 +25,20 @@ public class cake {
 
     String name = "";
     int response = 0;
+    String type = "cake";
+    String ID = "test_ID";
     String Description = "";
+    int cost = 35000;
+    int otime = 120;
 
     cake cake = null;
     cakeStore sheet = null;
 
     protected fruit fruit;
     protected topping topping;
+    
+    OrderData od = new OrderData() {
+    };
 
     Scanner sc = new Scanner(System.in);
 
@@ -142,43 +152,12 @@ public class cake {
     }
 
     public void createFile() {
-        try {
-            Description = cake.cake.getName() + cake.fruit.getName() + cake.topping.getName();
+        OrderData orderdata = new OrderData();
+        ConsoleObserver console = new ConsoleObserver(orderdata);
+        FileObserver file = new FileObserver(orderdata);
 
-            String s = "/";
-            String n = "\n";
-
-            File file = new File(url);
-            FileWriter writer;
-
-            Charset cs = StandardCharsets.UTF_8;
-
-            writer = new FileWriter(file, true);
-            writer.write("cake");
-            writer.write(s);
-
-            if (Login.id == null) {
-                writer.write("");
-            } else {
-                writer.write(Login.id);
-            }
-
-            if (Login.nid == 0) {
-                writer.write("");
-            } else {
-                writer.write(Login.nid);
-            }
-            writer.write(s);
-            writer.write(Description);
-            writer.write(n);
-
-            System.out.println("작성완료");
-
-            writer.flush();
-            writer.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println(type);
+        System.out.println(cost);
+        orderdata.setMeasurements(type, ID, Description, cost, otime);
     }
 }

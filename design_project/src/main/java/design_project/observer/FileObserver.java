@@ -41,6 +41,8 @@ public class FileObserver implements Observer{
     
     //메모장에 입력
     public void display(){
+        String costString = Integer.toString(cost);
+        String otimeString = Integer.toString(otime);
         try {
             String s = "/";
             String n = "\n";
@@ -48,7 +50,7 @@ public class FileObserver implements Observer{
            File file = new File(url);
            FileWriter writer;
 
-            Charset cs = StandardCharsets.UTF_8;
+           // Charset cs = StandardCharsets.UTF_8;
 
             // type/ID/Description/cost/otime 형태로 메모장에 저장
             writer = new FileWriter(file, true);
@@ -58,10 +60,11 @@ public class FileObserver implements Observer{
             writer.write(s);
             writer.write(Description);
             writer.write(s);
-            writer.write(cost);
+            writer.write(costString);
             writer.write(s);
-            writer.write(otime);
+            writer.write(otimeString);
             writer.write(n);
+            
             writer.flush();
             writer.close();
 

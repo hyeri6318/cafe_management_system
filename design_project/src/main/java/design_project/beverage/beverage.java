@@ -7,6 +7,9 @@ package design_project.beverage;
 
 import design_project.FileSystem.CreateFile;
 import design_project.client.Login;
+import design_project.observer.ConsoleObserver;
+import design_project.observer.FileObserver;
+import design_project.observer.OrderData;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.charset.Charset;
@@ -20,14 +23,19 @@ import java.util.Scanner;
 public abstract class beverage {
 
     String URL = CreateFile.URL + "\\order.txt";
+    String type = "beverage";
+    String ID = "test_ID"; //TODO ID 받아오기
     String Description = "";
     int cost = 0;
-    int bevTime = 0;
+    int otime = 0;
     public String coffeeDescription = "";
     public String toppingDescription = "";
     public int toppingNumDescription = 0;
     public int costDescription = 0;
     public int timeDescription = 0;
+
+    OrderData od = new OrderData() {
+    };
 
     public String getcoffeeDescription() {
         return coffeeDescription;
@@ -82,7 +90,7 @@ public abstract class beverage {
                 beverage americano = new americano();
                 coffeeDescription = americano.getcoffeeDescription();
                 cost += americano.getcostDescription();
-                bevTime += americano.gettimeDescription();
+                otime += americano.gettimeDescription();
                 selectTopping();
                 break;
             } else if (response == 2) {
@@ -90,7 +98,7 @@ public abstract class beverage {
                 beverage latte = new latte();
                 coffeeDescription = latte.getcoffeeDescription();
                 cost += latte.getcostDescription();
-                bevTime += latte.gettimeDescription();
+                otime += latte.gettimeDescription();
                 selectTopping();
                 break;
             } else if (response == 3) {
@@ -102,7 +110,7 @@ public abstract class beverage {
                     chocolateFrappuccino chocolateFrappuccino = new chocolateFrappuccino();
                     coffeeDescription = chocolateFrappuccino.getcoffeeDescription();
                     cost += chocolateFrappuccino.getcostDescription();
-                    bevTime += chocolateFrappuccino.gettimeDescription();
+                    otime += chocolateFrappuccino.gettimeDescription();
                     selectTopping();
                     break;
                 } else if (response == 2) {
@@ -110,7 +118,7 @@ public abstract class beverage {
                     vanillaFrappuccino vanillaFrappuccino = new vanillaFrappuccino();
                     coffeeDescription = vanillaFrappuccino.getcoffeeDescription();
                     cost += vanillaFrappuccino.getcostDescription();
-                    bevTime += vanillaFrappuccino.gettimeDescription();
+                    otime += vanillaFrappuccino.gettimeDescription();
                     selectTopping();
                     break;
                 }
@@ -122,7 +130,7 @@ public abstract class beverage {
                     strawberrySmoothie strawberrySmoothie = new strawberrySmoothie();
                     coffeeDescription = strawberrySmoothie.getcoffeeDescription();
                     cost += strawberrySmoothie.getcostDescription();
-                    bevTime += strawberrySmoothie.gettimeDescription();
+                    otime += strawberrySmoothie.gettimeDescription();
                     selectTopping();
                     break;
                 } else if (response == 2) {
@@ -130,7 +138,7 @@ public abstract class beverage {
                     kiwiSmoothie kiwiSmoothie = new kiwiSmoothie();
                     coffeeDescription = kiwiSmoothie.getcoffeeDescription();
                     cost += kiwiSmoothie.getcostDescription();
-                    bevTime += kiwiSmoothie.gettimeDescription();
+                    otime += kiwiSmoothie.gettimeDescription();
                     selectTopping();
                     break;
                 }
@@ -142,7 +150,7 @@ public abstract class beverage {
                     blacktea blacktea = new blacktea();
                     coffeeDescription = blacktea.getcoffeeDescription();
                     cost += blacktea.getcostDescription();
-                    bevTime += blacktea.gettimeDescription();
+                    otime += blacktea.gettimeDescription();
                     selectTopping();
                     break;
                 } else if (response == 2) {
@@ -150,7 +158,7 @@ public abstract class beverage {
                     matcha matcha = new matcha();
                     coffeeDescription = matcha.getcoffeeDescription();
                     cost += matcha.getcostDescription();
-                    bevTime += matcha.gettimeDescription();
+                    otime += matcha.gettimeDescription();
                     selectTopping();
                     break;
                 } else {
@@ -174,7 +182,7 @@ public abstract class beverage {
                     ice ice = new ice();
                     toppingIce = ice.gettoppingDescription();
                     cost += ice.getcostDescription();
-                    bevTime += ice.gettimeDescription();
+                    otime += ice.gettimeDescription();
                     toppingIce = "iced ";
                 } else {
                     System.out.println("이미 선택한 옵션입니다.");
@@ -186,20 +194,20 @@ public abstract class beverage {
                     toppingDescription += shot.gettoppingDescription();
                     shotNum += shot.gettoppingNumDescription();
                     cost += shot.getcostDescription();
-                    bevTime += shot.gettimeDescription();
+                    otime += shot.gettimeDescription();
                 } else {
                     System.out.println("샷을 추가합니다.");
                     shot shot = new shot();
                     shotNum += shot.gettoppingNumDescription();
                     cost += shot.getcostDescription();
-                    bevTime += shot.gettimeDescription();
+                    otime += shot.gettimeDescription();
                 }
             } else if (response == 3) {
                 if (toppingWhip.equals("")) {
                     whip whip = new whip();
                     toppingWhip = whip.gettoppingDescription();
                     cost += whip.getcostDescription();
-                    bevTime += whip.gettimeDescription();
+                    otime += whip.gettimeDescription();
                     toppingWhip = "whip";
                 } else if (toppingWhip.equals("whip")) {
                     System.out.println("이미 선택한 옵션입니다.");
@@ -211,26 +219,24 @@ public abstract class beverage {
                     toppingDescription += syrup.gettoppingDescription();
                     syrupNum += syrup.gettoppingNumDescription();
                     cost += syrup.getcostDescription();
-                    bevTime += syrup.gettimeDescription();
+                    otime += syrup.gettimeDescription();
                 } else {
                     System.out.println("시럽을 추가합니다.");
                     syrup syrup = new syrup();
                     syrupNum += syrup.gettoppingNumDescription();
                     cost += syrup.getcostDescription();
-                    bevTime += syrup.gettimeDescription();
+                    otime += syrup.gettimeDescription();
                 }
             } else if (response == 5) {
                 System.out.println("토핑 추가를 종료합니다.");
-                Description = toppingIce + shotNum + "shot " + toppingWhip + syrupNum + "syrup " + coffeeDescription + "/" + cost + "\\" + "/" + bevTime + "min";
-                System.out.println("문장 출력 확인용");
-                System.out.println(Description);
+                Description = toppingIce + shotNum + "shot " + toppingWhip + syrupNum + "syrup " + coffeeDescription;
+                createFile();
+                beverage_last();
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
             }
         }
-        createFile();
-        beverage_last();
     }
 
     //음료 추가 주문 여부 확인
@@ -254,40 +260,10 @@ public abstract class beverage {
     }
 
     public void createFile() {
-        try {
-            String s = "/";
-            String n = "\n";
+        OrderData orderdata = new OrderData();
+        ConsoleObserver console = new ConsoleObserver(orderdata);
+        FileObserver file = new FileObserver(orderdata);
 
-            File file = new File(URL);
-            FileWriter writer;
-
-            Charset cs = StandardCharsets.UTF_8;
-
-            writer = new FileWriter(file, true);
-            writer.write("beverage");
-            writer.write(s);
-
-            if (Login.id == null) {
-                writer.write("");
-            } else {
-                writer.write(Login.id);
-            }
-
-            if (Login.nid == 0) {
-                writer.write("");
-            } else {
-                writer.write(Login.nid);
-            }
-
-            writer.write(s);
-            writer.write(Description);
-            writer.write(n);
-
-            writer.flush();
-            writer.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        orderdata.setMeasurements(type, ID, Description, cost, otime);
     }
 }
