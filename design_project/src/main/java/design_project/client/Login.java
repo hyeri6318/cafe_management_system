@@ -22,7 +22,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author 이혜리
+ * @author 이혜리, 이재혁
  */
 public class Login {
 
