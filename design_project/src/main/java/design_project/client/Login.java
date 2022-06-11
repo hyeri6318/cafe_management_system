@@ -9,7 +9,6 @@ import design_project.FileSystem.CreateFile;
 import design_project.beverage.beverage;
 import design_project.cake.cake;
 import design_project.md.MD;
-import design_project.nutrition.nutrition_main;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.charset.Charset;
@@ -35,7 +34,6 @@ public class Login {
     public static String id = null; // 회원 아이디
     public static int nid = 0; // 비회원 아이디
 
-    nutrition_main n = new nutrition_main();
     MD m = new MD() {
         @Override
         public String cost() {
@@ -130,7 +128,6 @@ public class Login {
 
     public void show() {
         System.out.print("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
-        n.nutrition();
         b.orderCheck();
         c.orderCheck();
         m.buy();
