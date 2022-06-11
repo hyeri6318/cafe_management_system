@@ -7,8 +7,8 @@ package design_project.observer;
 
 /**
  *
- * @author mikwang
+ * @author yooun
  */
 public interface Observer {
-    void update(String type, String ID, String Description, int cost, int otime);
+    void update(String type, String ID, String Description, int cost, int otime); //메뉴종류, 사용자ID, 메뉴이름, 가격, 시간
 }

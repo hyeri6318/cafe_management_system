@@ -6,37 +6,36 @@
 package design_project.observer;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
- * @author mikwang
+ * @author yooun
  */
-public class OrderData {
+public class OrderData implements Subject {
 
-    private List<Observer> observers;
+    private ArrayList observers;
     public String type;
     public String ID;
     public String Description;
     public int cost;
     public int otime;
-    Observer console = new Console();
-    Observer file = new File();
 
     public OrderData() {
-        observers = new ArrayList<Observer>();
+        observers = new ArrayList();
     }
 
-    public void registObserver(Observer observer) {
+    public void registerObserver(Observer observer) {
         observers.add(observer);
     }
 
     public void removeObserver(Observer observer) {
+        //배열에 들어간 내용 삭제하기
         observers.remove(observer);
     }
 
     public void notifyObserver() {
-        for (Observer observer : observers) {
+        for (int i = 0; i < observers.size(); i++) {
+            Observer observer = (Observer) observers.get(i);
             observer.update(type, ID, Description, cost, otime);
         }
     }
@@ -47,17 +46,14 @@ public class OrderData {
         this.Description = Description;
         this.cost = cost;
         this.otime = otime;
-        System.out.println(type); //여기까지 정상 반환
-        notifyObserver(); //값이 변화했으니까 알리기
-        registObserver(console); //콘솔 출력
-//        registObserver(file); //텍스트 파일 처리
+        notifyObserver();
     }
 
     public String gettype() {
         return type;
     }
 
-    public String ID() {
+    public String getID() {
         return ID;
     }
 
@@ -69,8 +65,7 @@ public class OrderData {
         return cost;
     }
 
-    public int getotime() {
+    public int otime() {
         return otime;
     }
-
 }

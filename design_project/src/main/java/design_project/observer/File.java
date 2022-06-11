@@ -11,17 +11,33 @@ import java.nio.charset.StandardCharsets;
 
 /**
  *
- * @author mikwang
+ * @author yooun
  */
-public class File implements Observer {
-
+public class File implements Observer{
     public String type;
     public String ID;
     public String Description;
     public int cost;
     public int otime;
+    private Subject orderdata;
     
-    public void File(){
+    public File(Subject orderdata){
+        this.orderdata = orderdata;
+        orderdata.registerObserver(this);
+    }
+    
+    public void update(String type, String ID, String Description, int cost, int otime){
+        this.type = type;
+        this.ID=ID;
+        this.Description = Description;
+        this.cost= cost;
+        this.otime=otime;
+        display();
+    }
+    
+    //메모장에 입력
+    //TODO: 파일 경로 static으로 설정하기
+    public void display(){
         try {
             String s = "/";
             String n = "\n";
@@ -50,8 +66,5 @@ public class File implements Observer {
             e.printStackTrace();
         }
     }
-    @Override
-    public void update(String type, String ID, String Description, int cost, int otime) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

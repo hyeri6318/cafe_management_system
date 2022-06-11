@@ -7,10 +7,10 @@ package design_project.observer;
 
 /**
  *
- * @author mikwang
+ * @author yooun
  */
 public interface Subject {
     void registerObserver(Observer observer);
     void removeObserver(Observer observer);
-    void notifyObserver(String type, String ID, String Description, int cost, int otime);
+    void notifyObserver();
 }
