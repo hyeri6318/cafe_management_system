@@ -9,14 +9,14 @@ package design_project.observer;
  *
  * @author 윤채민
  */
-public class Console implements Observer{
+public class ConsoleObserver implements Observer{
     public String Description;
     public int cost;
     public int otime;
     private Subject orderdata;
     
     
-    public Console(Subject orderdata){
+    public ConsoleObserver(Subject orderdata){
         this.orderdata = orderdata; //할 필요 없음, register가 하면 됨
         orderdata.registerObserver(this);
     }

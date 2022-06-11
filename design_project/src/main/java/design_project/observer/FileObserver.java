@@ -5,6 +5,8 @@
  */
 package design_project.observer;
 
+import design_project.FileSystem.CreateFile;
+import java.io.File;
 import java.io.FileWriter;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -13,7 +15,7 @@ import java.nio.charset.StandardCharsets;
  *
  * @author 윤채민
  */
-public class File implements Observer{
+public class FileObserver implements Observer{
     public String type;
     public String ID;
     public String Description;
@@ -21,7 +23,9 @@ public class File implements Observer{
     public int otime;
     private Subject orderdata;
     
-    public File(Subject orderdata){
+    String url = CreateFile.URL+"\\order.txt";
+    
+    public FileObserver(Subject orderdata){
         this.orderdata = orderdata;
         orderdata.registerObserver(this);
     }
@@ -36,14 +40,13 @@ public class File implements Observer{
     }
     
     //메모장에 입력
-    //TODO: 파일 경로 static으로 설정하기
     public void display(){
         try {
             String s = "/";
             String n = "\n";
 
-            java.io.File file = new java.io.File("C:\\project\\design_project_observer\\src\\main\\java\\observer\\observertest.txt"); //URL 경로 입력 필요
-            FileWriter writer;
+           File file = new File(url);
+           FileWriter writer;
 
             Charset cs = StandardCharsets.UTF_8;
 

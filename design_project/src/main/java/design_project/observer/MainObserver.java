@@ -23,8 +23,8 @@ public class MainObserver {
         int otime = 20;
         
         OrderData orderdata = new OrderData();
-        Console console = new Console(orderdata);
-        File file = new File(orderdata);
+        ConsoleObserver console = new ConsoleObserver(orderdata);
+        FileObserver file = new FileObserver(orderdata);
         
         orderdata.setMeasurements(type, ID, Description, cost, otime);
         orderdata.setMeasurements(type, ID, Description, cost, otime);

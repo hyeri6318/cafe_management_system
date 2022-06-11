@@ -67,6 +67,7 @@ public class Login {
     public void non_member() {  // 비회원일 경우 숫자로 랜덤 아이디 부여
         Random random = new Random();
         nid = random.nextInt(100);
+        ID=Integer.toString(nid);
 
         System.out.println(nid);
         show();
