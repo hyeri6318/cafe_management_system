@@ -10,8 +10,8 @@ package design_project.md;
  * @author 이혜리
  */
 public class tumbler extends MD{
-    public String cost() {
-        return "40000\\ ";
+    public int cost() {
+        return 40000;
     }
 
     public String exhibit() {

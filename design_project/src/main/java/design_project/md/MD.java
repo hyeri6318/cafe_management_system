@@ -7,6 +7,9 @@ package design_project.md;
 
 import design_project.FileSystem.CreateFile;
 import design_project.client.Login;
+import design_project.observer.ConsoleObserver;
+import design_project.observer.FileObserver;
+import design_project.observer.OrderData;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.charset.Charset;
@@ -19,22 +22,22 @@ import java.util.Scanner;
  */
 public abstract class MD {
 
-    String url = CreateFile.URL + "\\order.txt";
-
-    Scanner sc = new Scanner(System.in);
+   Scanner sc = new Scanner(System.in);
     int response = 0;
 
     MD mdName = null;
     String md_name = null;
     String md_message = null;
     String md_wrap = null;
-    String md_cost = null;
-    String md_result = null;
+    int cost = 0;
+    String Description = null;
+    int otime = 0;
+    String type="MD";
 
     protected wrapBehavior wrapbehavior;
     protected messageBehavior messagebehavior;
 
-    public abstract String cost();
+    public abstract int cost();
 
     public abstract String exhibit();
 
@@ -80,7 +83,6 @@ public abstract class MD {
         while (question2) {
             System.out.println("주문할 MD를 선택해 주세요.\n 1.텀블러 2.다이어리 3.컵 4.티백");
             response = sc.nextInt();
-
             if (response == 1) {
                 mdName = new tumbler();
                 md_extra1();
@@ -109,7 +111,6 @@ public abstract class MD {
         while (question3) {
             System.out.println("1.메시지 작성하기 2.메시지 작성 안함");
             response = sc.nextInt();
-
             if (response == 1) {
                 md_message();
                 break;
@@ -203,6 +204,7 @@ public abstract class MD {
                 md_buy();
                 break;
             } else if (response == 2) {
+                //   MD_Final();
                 System.out.println("MD 주문 완료");
                 break;
             } else {
@@ -215,47 +217,24 @@ public abstract class MD {
         md_name = mdName.exhibit();
         md_message = mdName.performMessage();
         md_wrap = mdName.performWrap();
-        md_cost = mdName.cost();
+        cost = mdName.cost();
 
-        md_result = md_name + md_message + md_wrap + md_cost;
+        Description = md_name + md_message + md_wrap;
+
         createFile();
     }
 
     public void createFile() {
-        try {
-            String s = "/";
-            String n = "\n";
+        OrderData orderdata = new OrderData();
+        ConsoleObserver console = new ConsoleObserver(orderdata);
+        FileObserver file = new FileObserver(orderdata);
 
-            File file = new File(url);
-            FileWriter writer;
-
-            Charset cs = StandardCharsets.UTF_8;
-
-            writer = new FileWriter(file, true);
-            writer.write("MD");
-            writer.write(s);
-
-            if (Login.id == null) {
-                writer.write("");
-            } else {
-                writer.write(Login.id);
-            }
-
-            if (Login.nid == 0) {
-                writer.write("");
-            } else {
-                writer.write(Login.nid);
-            }
-
-            writer.write(s);
-            writer.write(md_result);
-            writer.write(n);
-
-            writer.flush();
-            writer.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (Login.id == null) {
+            String ID = Login.nid;
+            orderdata.setMeasurements(type, ID, Description, cost, otime);
+        } else if (Login.nid == null) {
+            String ID = Login.id;
+            orderdata.setMeasurements(type, ID, Description, cost, otime);
         }
     }
 }

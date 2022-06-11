@@ -26,7 +26,6 @@ public class cake {
     String name = "";
     int response = 0;
     String type = "cake";
-    String ID = "test_ID";
     String Description = "";
     int cost = 35000;
     int otime = 120;
@@ -156,8 +155,12 @@ public class cake {
         ConsoleObserver console = new ConsoleObserver(orderdata);
         FileObserver file = new FileObserver(orderdata);
 
-        System.out.println(type);
-        System.out.println(cost);
-        orderdata.setMeasurements(type, ID, Description, cost, otime);
+        if (Login.id == null) {
+            String ID = Login.nid;
+            orderdata.setMeasurements(type, ID, Description, cost, otime);
+        } else if (Login.nid == null) {
+            String ID = Login.id;
+            orderdata.setMeasurements(type, ID, Description, cost, otime);
+        }
     }
 }

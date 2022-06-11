@@ -30,13 +30,14 @@ public class Login {
 
     String ID = null;
     String PW = null;
+    int NID=0;
 
     public static String id = null; // 회원 아이디
-    public static int nid = 0; // 비회원 아이디
+    public static String nid = null; // 비회원 아이디
 
     MD m = new MD() {
         @Override
-        public String cost() {
+        public int cost() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
@@ -66,8 +67,8 @@ public class Login {
 
     public void non_member() {  // 비회원일 경우 숫자로 랜덤 아이디 부여
         Random random = new Random();
-        nid = random.nextInt(100);
-        ID=Integer.toString(nid);
+        NID = random.nextInt(100);
+        nid = Integer.toString(NID);
 
         System.out.println(nid);
         show();

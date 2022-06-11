@@ -24,7 +24,6 @@ public abstract class beverage {
 
     String URL = CreateFile.URL + "\\order.txt";
     String type = "beverage";
-    String ID = "test_ID"; //TODO ID 받아오기
     String Description = "";
     int cost = 0;
     int otime = 0;
@@ -264,6 +263,12 @@ public abstract class beverage {
         ConsoleObserver console = new ConsoleObserver(orderdata);
         FileObserver file = new FileObserver(orderdata);
 
-        orderdata.setMeasurements(type, ID, Description, cost, otime);
+        if (Login.id == null) {
+            String ID = Login.nid;
+            orderdata.setMeasurements(type, ID, Description, cost, otime);
+        } else if (Login.nid == null) {
+            String ID = Login.id;
+            orderdata.setMeasurements(type, ID, Description, cost, otime);
+        }
     }
 }
