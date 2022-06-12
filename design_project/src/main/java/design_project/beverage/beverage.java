@@ -66,7 +66,7 @@ public abstract class beverage {
                 selectbeverage();
                 break;
             } else if (response == 2) {
-                System.out.println("음료를 주문하지 않습니다.");
+                System.out.println("음료를 주문하지 않습니다.\n");
                 question1 = false;
             } else {
                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");

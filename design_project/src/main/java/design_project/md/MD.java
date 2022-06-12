@@ -193,7 +193,7 @@ public abstract class MD {
         boolean question7 = true;
 
         while (question7) {
-            System.out.println("MD 상품을 더 구매하시겠습니까?\n 1.예 2.아니오");
+            System.out.println("\n MD 상품을 더 구매하시겠습니까?\n 1.예 2.아니오");
             response = sc.nextInt();
 
             if (response == 1) {
