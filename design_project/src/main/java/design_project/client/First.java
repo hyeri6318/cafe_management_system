@@ -1,7 +1,7 @@
 /**
  *최초 작성자 : 이혜리, 이재혁
- *최초 작성일 : 
- * 목적 : 
+ *최초 작성일 :
+ * 목적 :
  */
 package design_project.client;
 
@@ -17,7 +17,7 @@ public class First {
         removeClient r = new removeClient();
 
         while (true) {
-            System.out.println("------- 환엽합니다 -----------");
+            System.out.println("------- 환영합니다 -----------");
             System.out.println("1. 회원");
             System.out.println("2. 비회원");
             System.out.println("3. 회원가입");
@@ -26,7 +26,7 @@ public class First {
 
             Scanner sc = new Scanner(System.in);
             int choice = sc.nextInt();
-
+            
             switch (choice) {
                 case 1:
                     l.DoLogin();
@@ -38,15 +38,14 @@ public class First {
                 case 3:
                     s.Register();
                     break;
-                    
+
                 case 4:
                     c.doChangePW();
                     break;
-                    
+
                 case 5:
                     r.doRemove();
                     break;
-
             }
         }
 

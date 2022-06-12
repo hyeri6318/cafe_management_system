@@ -89,7 +89,7 @@ public class Login {
         NID = random.nextInt(100);
         nid = Integer.toString(NID);
 
-        System.out.println(nid);
+        System.out.println("임시 아이디 : " +nid);
         show();
     }
 
