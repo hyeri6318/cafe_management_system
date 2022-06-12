@@ -1,7 +1,6 @@
 /**
  *최초 작성자 : 윤채민, 이혜리
- *최초 작성일 : 
- * 목적 : 
+ *최초 작성일 : 2022-06-03
  */
 package design_project.cake;
 
@@ -21,8 +20,6 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class cake {
-
-    String url = CreateFile.URL + "\\order.txt";
 
     String name = "";
     int response = 0;

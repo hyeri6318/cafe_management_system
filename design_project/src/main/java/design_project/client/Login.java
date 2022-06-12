@@ -1,7 +1,7 @@
 /**
  *최초 작성자 : 이혜리, 이재혁
- *최초 작성일 : 
- * 목적 : 
+ *최초 작성일 : 2022-05-29
+ * 목적 : 회원 로그인이 가능하게 하기 위함
  */
 package design_project.client;
 
@@ -99,17 +99,17 @@ public class Login {
             String[] array = null;
 
             BufferedReader is = new BufferedReader(new FileReader(url));
-
+            // 파일 객체 생성
             Path path = Paths.get(url);
-
+            // 캐릭터셋 지정
             Charset cs = StandardCharsets.UTF_8;
-
+            // 파일 내용을 담을 리스트
             ArrayList<String> list = new ArrayList<String>();
             list = (ArrayList<String>) Files.readAllLines(path, cs);
-
-            ArrayList<String> list_temp = new ArrayList<String>();
-            ArrayList<String> id_list = new ArrayList<String>();
-            ArrayList<String> pw_list = new ArrayList<String>();
+            // 모든 파일 내용 읽어와서 저장
+            ArrayList<String> list_temp = new ArrayList<String>();  // 임시 저장
+            ArrayList<String> id_list = new ArrayList<String>();    // 아이디 저장
+            ArrayList<String> pw_list = new ArrayList<String>();    // 비밀번호 저장
 
             for (String i : list) {
                 array = i.split("\n");
@@ -118,8 +118,8 @@ public class Login {
 
             for (String i : list_temp) {
                 String[] temp = i.split("/");
-                id_list.add(temp[1]);
-                pw_list.add(temp[2]);
+                id_list.add(temp[1]);   // 아이디
+                pw_list.add(temp[2]);   // 비밀번호
             }
 
             for (int i = 0; i < id_list.size(); i++) {
@@ -148,6 +148,7 @@ public class Login {
     }
 
     public void show() {
+        // 영양정보 제공을 하기 위함
         System.out.print("-----------------------음료 및 케이크 영양 정보를 제공합니다-----------------------\n");
         
         System.out.println("--------------- 커피 ----------------");
@@ -271,9 +272,9 @@ public class Login {
         nutrition = director.getNutritoin();
         System.out.println(nutrition+"\n");
         
-        b.orderCheck();
-        c.orderCheck();
-        m.buy();
-        p.show();
+        b.orderCheck(); // 음료 주문
+        c.orderCheck(); // 케이크 주문
+        m.buy();    // MD 주문
+        p.show();   // 픽업
     }
 }

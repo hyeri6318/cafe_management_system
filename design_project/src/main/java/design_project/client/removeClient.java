@@ -1,6 +1,6 @@
 /**
  *최초 작성자 : 이혜리, 이재혁
- *최초 작성일 : 
+ *최초 작성일 : 2022-06-01
  * 목적 : 
  */
 package design_project.client;
@@ -93,7 +93,7 @@ public class removeClient {
                         writer.write(pw_list.get(i));
                         writer.write(n);
 
-                        writer.flush();
+                        writer.flush(); // 출력은 버퍼에 쌓여있기에 쌓인 버퍼를 목적지로 보내줌
                     }
                 }
                 end = 0;

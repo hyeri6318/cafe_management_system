@@ -1,6 +1,6 @@
 /**
  *최초 작성자 : 이혜리
- *최초 작성일 : 
+ *최초 작성일 : 2022-06-01
  * 목적 : 지정된 영양정보 값을 Director 클래스로 전달하기 위함
  */
 package design_project.nutrition;

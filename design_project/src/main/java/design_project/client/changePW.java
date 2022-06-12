@@ -1,6 +1,6 @@
 /**
  *최초 작성자 : 이혜리, 이재혁
- *최초 작성일 : 
+ *최초 작성일 : 2022-05-30
  * 목적 : 
  */
 package design_project.client;
@@ -26,7 +26,7 @@ public class changePW {
     String ID = null;
     String PW = null;
     String npw1 = null;
-
+    // 모든 파일 내용 읽어와서 저장
     ArrayList<String> name_list = new ArrayList<String>();
     ArrayList<String> id_list = new ArrayList<String>();
     ArrayList<String> pw_list = new ArrayList<String>();

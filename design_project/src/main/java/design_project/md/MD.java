@@ -1,7 +1,6 @@
 /**
  *최초 작성자 : 이혜리
- *최초 작성일 : 
- * 목적 : 
+ *최초 작성일 : 2022-06-02 
  */
 package design_project.md;
 
@@ -220,7 +219,8 @@ public abstract class MD {
         createFile();
     }
 
-    public void createFile() {
+    // design_project.observer를 실행시켜 MD 주문 내역을 저장시키고 콘솔에 출력시킴
+    public void createFile() { 
         OrderData orderdata = new OrderData();
         ConsoleObserver console = new ConsoleObserver(orderdata);
         FileObserver file = new FileObserver(orderdata);

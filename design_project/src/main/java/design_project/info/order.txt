@@ -1,0 +1,6 @@
+beverage/lhl/0shot whip0syrup kiwi smoothie
+cake/lhl/Apple Cheese Cake ,(fruit : mango , topping : macaroon)
+MD/lhl/cup, wrap : delivery packing, 
+beverage/93/0shot 0syrup latte/2500/5
+cake/93/Apple Chiffon Cake ,(fruit : strawberry , topping : chocolate)/35000/120
+cake/93/Apple Whipped Cake ,(fruit : strawberry , topping : chocolate)/35000/120

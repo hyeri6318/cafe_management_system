@@ -1,6 +1,6 @@
 /**
  *최초 작성자 : 이혜리
- *최초 작성일 : 
+ *최초 작성일 : 2022-06-01
  * 목적 : NutritionBuilder 클래스에 영양정보 객체 생성응 요청하기 위함
  */
 package design_project.nutrition;
