@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리
+ *최초 작성일 : 
+ * 목적 : NutritionBuilder 클래스에 영양정보 객체 생성응 요청하기 위함
  */
 package design_project.nutrition;
 
-/**
- *
- * @author 이혜리
- */
 public class Director {
     private NutritionBuilder nutritionBuilder = null;
     

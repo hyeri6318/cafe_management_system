@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 윤채민
+ *최초 작성일 : 
+ *목적 : 음료 정보를 상속하기 위함
  */
 package design_project.beverage;
 
@@ -16,10 +16,6 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-/**
- *
- * @author 윤채민
- */
 public abstract class beverage {
 
     String URL = CreateFile.URL + "\\order.txt";
@@ -227,7 +223,7 @@ public abstract class beverage {
                     otime += syrup.gettimeDescription();
                 }
             } else if (response == 5) {
-                System.out.println("토핑 추가를 종료합니다.");
+                System.out.println("토핑 추가를 종료합니다.\n");
                 Description = toppingIce + shotNum + "shot " + toppingWhip + syrupNum + "syrup " + coffeeDescription;
                 createFile();
                 beverage_last();
@@ -243,14 +239,14 @@ public abstract class beverage {
         boolean question4 = true;
 
         while (question4) {
-            System.out.println("음료를 더 주문하시겠습니까?\n1.예 2.아니오");
+            System.out.println("\n음료를 더 주문하시겠습니까?\n1.예 2.아니오");
             response = sc.nextInt();
 
             if (response == 1) {
                 selectbeverage();
                 break;
             } else if (response == 2) {
-                System.out.println("음료 주문 완료");
+                System.out.println("음료 주문 완료\n");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다.");

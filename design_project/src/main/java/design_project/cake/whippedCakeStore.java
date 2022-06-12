@@ -1,9 +1,10 @@
+/**
+ *최초 작성자 : 윤채민, 이혜리
+ *최초 작성일 : 
+ * 목적 : cakeStore의 틀을 가져와서 실제로 케이크를 완성
+ */
 package design_project.cake;
 
-/**
- *
- * @author 윤채민, 이혜리
- */
 public class whippedCakeStore extends cakeStore {
     protected cake createCake(String item) {
         cake cake = null;

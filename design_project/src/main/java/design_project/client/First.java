@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리, 이재혁
+ *최초 작성일 : 
+ * 목적 : 
  */
 package design_project.client;
 
 import design_project.FileSystem.CreateFile;
 import java.util.Scanner;
 
-/**
- *
- * @author 이혜리, 이재혁
- */
 public class First {
 
     public void Show() {

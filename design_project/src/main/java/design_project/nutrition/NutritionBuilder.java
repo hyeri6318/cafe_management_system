@@ -1,31 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리
+ *최초 작성일 : 
+ * 목적 : 탄수화물, 단백질, 지방, 당, 나트륨, 칼로리, 총제공량 상품 이름 등의 영양 정보 틀을 지정하기 위함
  */
 package design_project.nutrition;
 
-/**
- *
- * @author 이혜리
- */
 public interface NutritionBuilder {
 
-    public void Menu();
+    public void Menu(); // 상품 이름
 
-    public void caloreis();
+    public void caloreis(); // 칼로리
 
-    public void protein();
+    public void protein();  // 단백질
 
-    public void carbohydrate();
+    public void carbohydrate(); // 탄수화물
 
-    public void fat();
+    public void fat();  // 지방
 
-    public void sodium();
+    public void sodium();   // 나트륨
 
-    public void sugar();
+    public void sugar();    // 당
 
-    public void servingSize();
+    public void servingSize();  // 총제공량
     
     public Nutrition getNutrition();
 }

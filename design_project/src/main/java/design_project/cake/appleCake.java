@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 윤채민, 이혜리
+ *최초 작성일 : 
+ * 목적 : 케이크의 틀을 가져와서 실제로 완성된 케이크의 완성품
  */
 package design_project.cake;
 
-/**
- *
- * @author 윤채민, 이혜리
- */
 public class appleCake extends cake {
     private cakeIngredientFactory ingredientFactory;
 

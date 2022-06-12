@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리
+ *최초 작성일 : 
+ * 목적 : 픽업한 고객의 주문 내용을 메모장에서 삭제하기 위함
  */
 package design_project.pickup;
 
@@ -18,10 +18,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author 이혜리
- */
 public class Pickup {
 
     String url = CreateFile.URL + "\\order.txt";
@@ -78,6 +74,7 @@ public class Pickup {
                 }
             }
 
+            // 메모장에 저장된 내용이 삭제되었는지 확인하는 변수
             int end = -1; //0은 정상 삭제. -1은 정보가 없는경우
 
             if (ch == 0) {
@@ -97,7 +94,8 @@ public class Pickup {
                         writer.write(s);
                         writer.write(order_list.get(i));
                         writer.write(n);
-
+                        
+                        // 출력은 버퍼에 쌓여있기에 쌓인 버퍼를 목적지로 보내줌
                         writer.flush();
                     }
                 }

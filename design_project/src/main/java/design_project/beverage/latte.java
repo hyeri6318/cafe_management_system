@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 윤채민
+ *최초 작성일 : 
+ * 목적 : 음료(라떼)의 객체를 생성하고 반환
  */
 package design_project.beverage;
 
-/**
- *
- * @author 윤채민
- */
 public class latte extends beverage {
     public latte() {
         coffeeDescription = "latte";

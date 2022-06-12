@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리, 이재혁
+ *최초 작성일 : 
+ * 목적 : 
  */
 package design_project.client;
 
@@ -18,10 +18,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author 이혜리, 이재혁
- */
 public class changePW {
 
     String url = CreateFile.URL + "\\client.txt";

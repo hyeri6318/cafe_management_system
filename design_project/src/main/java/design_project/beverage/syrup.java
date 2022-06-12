@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 윤채민
+ *최초 작성일 : 
+ * 목적 : 토핑 정보(시럽)을 구현하는 클래스
  */
 package design_project.beverage;
 
-/**
- *
- * @author 윤채민
- */
 public class syrup extends extra {
     public String gettoppingDescription(){
         return "syrup ";

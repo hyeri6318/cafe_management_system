@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리
+ *최초 작성일 : 
+ * 목적 : 해당 프로젝트가 실행되는 메인 클래스
  */
 package design_project.FileSystem;
 
-/**
- *
- * @author 이혜리
- */
 public class Main {
 
     /**

@@ -1,9 +1,10 @@
+/**
+ *최초 작성자 : 윤채민, 이혜리
+ *최초 작성일 : 
+ * 목적 : 실질적인 객체 생성을 담당
+ */
 package design_project.cake;
 
-/**
- *
- * @author 윤채민, 이혜리
- */
 public class whippedIngredientFactory implements cakeIngredientFactory {
     //생크림케이크 과일 추가
     public fruit createFruit(){

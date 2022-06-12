@@ -1,0 +1,12 @@
+beverage/51/2shot 0syrup americano/3000/7
+beverage/28/0shot 0syrup americano/2000/5
+beverage/28/0shot whip0syrup latte/3000/11
+beverage/45/0shot 0syrup latte/2500/5
+beverage/45/0shot 0syrup latte/2500/10
+beverage/17/0shot 0syrup vanilla frappuccino/4000/15
+cake/17/Blueberry Whipped Cake ,(fruit : strawberry , topping : chocolate)/35000/120
+cake/38/Blueberry Chiffon Cake ,(fruit : strawberry , topping : chocolate)/35000/120
+beverage/25/0shot 0syrup matcha/4000/15
+cake/25/Blueberry Chiffon Cake ,(fruit : strawberry , topping : chocolate)/35000/120
+beverage/lhl/0shot 0syrup black tea/4000/15
+cake/lhl/Blueberry Whipped Cake ,(fruit : strawberry , topping : chocolate)/35000/120

@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 윤채민
+ *최초 작성일 : 
+ * 목적 : 
  */
 package design_project.observer;
 
@@ -11,10 +11,6 @@ import java.io.FileWriter;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-/**
- *
- * @author 윤채민
- */
 public class FileObserver implements Observer{
     public String type;
     public String ID;

@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *최초 작성자 : 이혜리
+ *최초 작성일 : 
+ * 목적 : 초콜릿 프라푸치노에 해당하는 영양정보 값을 구체적으로 지정하기 위함
  */
 package design_project.nutrition;
 
-/**
- *
- * @author 이혜리
- */
 public class ChocolateFrappuccinoBuilder implements NutritionBuilder{
     
     Nutrition nutrition;
@@ -19,7 +15,7 @@ public class ChocolateFrappuccinoBuilder implements NutritionBuilder{
 
     @Override
     public void Menu() {
-        nutrition.setMenu("초코릿 프라푸치노");
+        nutrition.setMenu("초콜릿 프라푸치노");
     }
 
     @Override

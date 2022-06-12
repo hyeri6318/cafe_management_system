@@ -1,3 +1,8 @@
+/**
+ *최초 작성자 : 윤채민, 이혜리
+ *최초 작성일 : 
+ * 목적 : 
+ */
 package design_project.cake;
 
 import design_project.FileSystem.CreateFile;
@@ -15,10 +20,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-/**
- *
- * @author 윤채민, 이혜리
- */
 public class cake {
 
     String url = CreateFile.URL + "\\order.txt";
@@ -109,15 +110,15 @@ public class cake {
             System.out.println("잼 종류를 선택해 주세요.\n1.사과 2.블루베리 3.체리");
             response = sc.nextInt();
             if (response == 1) {
-                System.out.println("사과 잼을 선택하셨습니다.");
+                System.out.println("사과 잼을 선택하셨습니다.\n");
                 cake = sheet.orderCake("사과");     // this.cake를 새로 생성된 케이크로 할당. this.cake가 변경됨
                 break;
             } else if (response == 2) {
-                System.out.println("블루베리 잼을 선택하셨습니다.");
+                System.out.println("블루베리 잼을 선택하셨습니다.\n");
                 cake = sheet.orderCake("블루베리");
                 break;
             } else if (response == 3) {
-                System.out.println("체리 잼을 선택하셨습니다.");
+                System.out.println("체리 잼을 선택하셨습니다.\n");
                 cake = sheet.orderCake("체리");
                 break;
             } else {
@@ -135,14 +136,14 @@ public class cake {
         boolean question4 = true;
 
         while (question4) {
-            System.out.println("케이크를 더 주문하시겠습니까?\n1.예 2.아니오");
+            System.out.println("\n케이크를 더 주문하시겠습니까?\n1.예 2.아니오");
             response = sc.nextInt();
 
             if (response == 1) {
                 selectSheet();
                 break;
             } else if (response == 2) {
-                System.out.println("케이크 주문 완료");
+                System.out.println("케이크 주문 완료\n");
                 break;
             } else {
                 System.out.println("잘못된 입력입니다.");
